@@ -1,112 +1,110 @@
-const links = [...document.querySelectorAll('nav a')];
-const sections = [...document.querySelectorAll('main section')];
-const dialog = document.querySelector('dialog');
-const pane = document.querySelector('main');
-let active;
+const slides = [...document.querySelectorAll('.slide')];
+const topics = document.getElementById('topics');
+const presenter = document.getElementById('presenter');
+const topicLinks = [...topics.querySelectorAll('nav a')];
+const previous = document.getElementById('previous');
+const next = document.getElementById('next');
+const fullscreen = document.getElementById('fullscreen');
+const aliases = {
+  cloning: 'careers-archon',
+  'loopy-tunes': 'careers-archon',
+  'how-it-started': 'blueprint',
+  'avatar-studio': 'blueprint',
+  possibilities: 'adaptive',
+  'teacher-dashboard': 'capabilities',
+  library: 'adaptive',
+  wa: 'adaptive',
+  constraints: 'adaptive',
+  pilot: 'adaptive',
+  basil: 'adaptive'
+};
+let active = 0;
 
-function showSlide() {
-  if (location.hash === '#loopy-tunes') history.replaceState(null, '', '#careers-archon');
-  if (location.hash === '#avatar-studio') history.replaceState(null, '', '#how-it-started');
-  if (['#library', '#wa', '#constraints', '#pilot', '#basil'].includes(location.hash)) history.replaceState(null, '', '#adaptive');
-  const selected = sections.find(section => '#' + section.id === location.hash) ?? sections[0];
-  if (active === selected.id) return;
-
-  active = selected.id;
-  for (const section of sections) {
-    section.hidden = section !== selected;
-    for (const video of section.querySelectorAll('video')) {
-      if (section.hidden) {
-        video.pause();
-        if (video.id) video.muted = true;
-      }
-      else video.play().catch(() => {
-        // The playback controls remain available if autoplay is blocked.
-      });
+function updateMedia() {
+  for (const video of document.querySelectorAll('video')) {
+    if (video.closest('[hidden]')) {
+      video.pause();
+      video.muted = true;
+    } else {
+      video.play().catch(() => {});
     }
   }
-  for (const link of links) {
-    if (link.hash === '#' + active) link.setAttribute('aria-current', 'location');
+}
+
+function showSlide() {
+  const requested = location.hash.slice(1);
+  const id = Object.hasOwn(aliases, requested) ? aliases[requested] : requested;
+  if (id !== requested) history.replaceState(null, '', '#' + id);
+  active = Math.max(0, slides.findIndex(slide => slide.id === id));
+  slides.forEach((slide, index) => { slide.hidden = index !== active; });
+  topicLinks.forEach((link, index) => {
+    if (index === active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
-  }
-  if (active === 'blueprint') {
-    const frame = selected.querySelector('iframe');
-    if (!frame.hasAttribute('src')) frame.src = selected.querySelector('#blueprint-live-link').href;
-  }
-  pane.scrollTop = 0;
+  });
+  document.getElementById('current-topic').textContent = topicLinks[active].textContent;
+  previous.disabled = active === 0;
+  next.disabled = active === slides.length - 1;
+  updateMedia();
+  window.scrollTo(0, 0);
+}
+
+function step(amount) {
+  const slide = slides[active + amount];
+  if (slide) location.hash = slide.id;
 }
 
 addEventListener('hashchange', showSlide);
-showSlide();
-
-document.querySelector('.skip').addEventListener('click', event => {
-  event.preventDefault();
-  pane.focus();
-});
-
-document.querySelector('#notes').addEventListener('click', () => {
-  const slide = presenterNotes.find(note => note.id === active);
-  document.querySelector('#notes-title').textContent = slide.time ? slide.label + ' · ' + slide.time : slide.label;
-  const paragraphs = slide.paragraphs.map(text => {
+previous.addEventListener('click', () => step(-1));
+next.addEventListener('click', () => step(1));
+for (const button of document.querySelectorAll('[data-menu]')) {
+  button.addEventListener('click', () => topics.showModal());
+}
+for (const link of topicLinks) {
+  link.addEventListener('click', () => topics.close());
+}
+document.getElementById('notes').addEventListener('click', () => {
+  const paragraphs = presenterNotes[slides[active].id].map(text => {
     const paragraph = document.createElement('p');
     paragraph.textContent = text;
     return paragraph;
   });
-  document.querySelector('#notes-content').replaceChildren(...paragraphs);
-  dialog.showModal();
-  dialog.scrollTop = 0;
+  document.getElementById('notes-content').replaceChildren(...paragraphs);
+  presenter.showModal();
 });
-
-const sidebar = document.querySelector('#slide-panel');
-const sidebarToggle = document.querySelector('#toggle-sidebar');
-const edge = document.querySelector('#slide-edge');
-let pinned = true;
-
-function setSidebarOpen(open) {
-  sidebar.inert = !open;
-  document.body.classList.toggle('sidebar-open', open);
-  edge.setAttribute('aria-expanded', String(open));
-}
-
-function hideSidebar() {
-  setSidebarOpen(false);
-  edge.focus({preventScroll:true});
-}
-
-sidebarToggle.addEventListener('click', () => {
-  pinned = !pinned;
-  document.body.classList.toggle('sidebar-collapsed', !pinned);
-  edge.hidden = pinned;
-  sidebarToggle.textContent = pinned ? 'Hide slide list' : 'Pin slide list';
-  if (pinned) setSidebarOpen(true);
-  else hideSidebar();
+fullscreen.hidden = !document.fullscreenEnabled;
+fullscreen.addEventListener('click', async () => {
+  if (document.fullscreenElement) await document.exitFullscreen();
+  else await document.documentElement.requestFullscreen();
 });
-
-edge.addEventListener('click', () => {
-  setSidebarOpen(true);
-  sidebarToggle.focus({preventScroll:true});
-});
-document.addEventListener('pointermove', event => {
-  if (pinned || event.pointerType !== 'mouse') return;
-  const withinSidebar = !sidebar.inert && event.clientX < sidebar.getBoundingClientRect().right;
-  setSidebarOpen(event.clientX < 12 || withinSidebar);
-});
-document.addEventListener('pointerdown', event => {
-  if (!pinned && !sidebar.contains(event.target) && event.target !== edge) setSidebarOpen(false);
+document.addEventListener('fullscreenchange', () => {
+  fullscreen.textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen';
 });
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !pinned && !sidebar.inert && !dialog.open) hideSidebar();
+  if (topics.open || presenter.open || event.target.closest('video, input, textarea, select') || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+    event.preventDefault();
+    step(event.key === 'ArrowLeft' ? -1 : 1);
+  }
 });
-
-for (const button of document.querySelectorAll('[data-sound-for]')) {
-  const video = document.getElementById(button.dataset.soundFor);
-  video.addEventListener('volumechange', () => {
-    const audible = !video.muted && video.volume > 0;
-    button.setAttribute('aria-pressed', String(audible));
-    button.textContent = audible ? 'Turn sound off' : 'Turn sound on';
-  });
+for (const button of document.querySelectorAll('[data-view]')) {
   button.addEventListener('click', () => {
-    video.muted = !video.muted && video.volume > 0;
-    if (!video.muted && video.volume === 0) video.volume = 1;
-    if (!video.muted) video.play().catch(() => {});
+    const group = button.closest('.media-switch');
+    for (const choice of group.querySelectorAll('[data-view]')) {
+      choice.setAttribute('aria-pressed', String(choice === button));
+    }
+    for (const view of group.querySelectorAll('[data-panel]')) {
+      view.hidden = view.dataset.panel !== button.dataset.view;
+    }
+    updateMedia();
   });
 }
+for (const button of document.querySelectorAll('[data-sound]')) {
+  const video = button.previousElementSibling;
+  button.setAttribute('aria-pressed', 'false');
+  button.addEventListener('click', () => { video.muted = !video.muted; });
+  video.addEventListener('volumechange', () => {
+    button.textContent = video.muted ? 'Turn sound on' : 'Mute sound';
+    button.setAttribute('aria-pressed', String(!video.muted));
+  });
+}
+showSlide();

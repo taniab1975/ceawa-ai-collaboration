@@ -1,1 +1,54 @@
-const presenterNotes = [{"id": "opening", "label": "Vibe Coding", "time": "0:00–1:00", "paragraphs": ["I want to take you on a very short journey.", "Less than 18 months ago, some of us at Emmanuel were given six-month ChatGPT subscriptions.", "Around that time, my brother introduced me to something called vibe coding.", "I said, \"What's vibe coding?\"", "He said, \"You know, it's the vibe, man!\"", "Apparently, you just describe the software you want, and AI helps build it for you.", "So I gave it a go, and I’ve been addicted ever since.", "The campus is designed for fun, engagement, orientation and, eventually, social interaction. Different buildings give groups of learning modules a digital home.", "[SHOW the overhead campus flyover, then the EST Lab, Chapel and Avatar Studio entrances.]"]}, {"id": "cloning", "label": "Recycle, re-use, re-purpose Career Empire into Curios", "time": "1:44–2:35", "paragraphs": ["[PLAY the Career Empire campus walkthrough, then show the rocket prompt and play the Curios blastoff.]", "Here’s an example. In an already established online world, I wanted to trial customising it for a moon project in another class.", "You can see my initial prompt here – Can we add a rocket? Full size ... it should be just an amazing looking rocketship in 3d.", "I then asked it to create a prompt for itself to actually build it.", "[PLAY the Curios rocket clip.]"]}, {"id": "careers-archon", "label": "Recycle, re-use, re-purpose Archon Engine into Careers Archon", "time": "", "paragraphs": ["[Turn sound on for Basil’s original Archon Engine. Students created the sound effects using another teacher’s app.]", "[Turn sound on for Loopy Tunes. Show the Boing preview, add it to the timeline and play it with the generated soundtrack.]", "[Show the Careers Archon gameplay preview from the Markets stall.]", "Two players move occupation pieces across the Perth plaza board. A challenge starts an Initiative duel. The student adjudicator compares both responses and explains their verdict. The winner chooses a territory effect, then the match returns to the board."]}, {"id": "initiative", "label": "Initiative – total pedagogy shift", "time": "3:24–4:16", "paragraphs": ["Now, rather than talk about it, let me show you.", "[SHOW: Rapid progression of your early creations through to Career Empire — approximately 60–75 seconds]", "All of this has been created in a relatively short space of time, largely through experimentation.", "And I'm not a software developer. I'm a careers teacher with ideas about how I want students to learn.", "These aren't finished commercial products. They're prototypes, experiments and possibilities.", "And what's most exciting to me isn't necessarily what I've already created.", "It's what this might allow us to create next.", "My thinking about teaching has started to change.", "I've traditionally relied heavily on explicit instruction. And that still has an important place.", "But I'm becoming increasingly interested in how we can use AI to create experiential, adaptive learning environments.", "Take initiative, for example.", "Traditionally, I might explain the five ways of demonstrating initiative, provide workplace examples and ask students to apply their understanding to scenarios.", "Now imagine putting a student into a simulated workplace.", "They're working their first shift at a busy noodlebar. Customers are waiting. Colleagues are struggling. Things are happening around them.", "What do they notice? What decisions do they make? Do they recognise an opportunity to demonstrate initiative?", "Rather than simply telling me what initiative means, they get to practise it."]}, {"id": "blueprint", "label": "Career Empire Blueprint", "time": "", "paragraphs": ["Open the live Career Empire Blueprint to show the project documentation."]}, {"id": "how-it-started", "label": "How it started", "time": "2:35–3:02", "paragraphs": ["Of course, that’s the end of the story so far. I created that this week.", "It’s been a wild ride.", "I started with what Basil called “a really nice Microsoft form”", "Early work was still very much worksheet based teaching, that I had digitised", "What I’m now working on is a total change in pedagogy, teaching through gamified learning.", "Avatar Studio gives students a place to explore identity, imagination and creativity through fun and play. Show the 2D poses and expressions, then the 3D customisation. The 3D upgrade makes animation much harder."]}, {"id": "possibilities", "label": "Possibilities", "time": "3:02–3:24", "paragraphs": ["What followed was a complete brain explosion.", "Could I make an interactive learning activity? Yes.", "Could I turn it into a game? Yes.", "Could I create an entire 3D world where students learn through experiences and decisions?", "Apparently, yes!", "I've become a bit of a mad scientist. Some experiments work. Others fail spectacularly.", "But I've never felt so intellectually stimulated. I'm learning programming, game design, 3D modelling and things I never imagined I'd be doing as a careers teacher.", "AI hasn't replaced my thinking. It's expanded what's possible with it."]}, {"id": "capabilities", "label": "Capabilities", "time": "", "paragraphs": ["Show the Capabilities video."]}, {"id": "teacher-dashboard", "label": "Teacher dashboard · Capabilities", "time": "", "paragraphs": ["Add the Capabilities teacher dashboard screenshot here."]}, {"id": "adaptive", "label": "Where could we go?", "time": "", "paragraphs": ["And imagine if we could take that further.", "A student who's struggling could receive more scaffolding, simpler language or additional practice. Another student could encounter greater complexity.", "Students could choose different pathways through the learning. They could read, watch, explore, experiment or make decisions.", "Case studies could come alive in a 3D environment.", "And rather than every student completing exactly the same worksheet, we could create multiple ways to reach the same learning outcomes.", "That's the potential I'm interested in.", "Not replacing good pedagogy, but giving teachers entirely new ways to deliver it.", "What could we create through CEAWA? A shared logbook, career learning resources, or an online Workplace Learning induction course are three places we could start.", "Teachers across WA could bring different expertise and local perspectives. Sharing the resources could give students access to more of those learning experiences, wherever their school is.", "What do you think?"]}];
+const presenterNotes = {
+  "opening": [
+    "These are discussion prompts. Choose the topic that fits the room and spend as long as useful on it.",
+    "These examples were built quickly. Some are playable, others are still being developed, and classroom delivery is planned for 2027."
+  ],
+  "campus": [
+    "I want to take you on a very short journey.",
+    "Less than 18 months ago, some of us at Emmanuel were given six-month ChatGPT subscriptions.",
+    "Around that time, my brother introduced me to something called vibe coding.",
+    "I said, \"What's vibe coding?\"",
+    "He said, \"You know, it's the vibe, man!\"",
+    "Apparently, you just describe the software you want, and AI helps build it for you.",
+    "So I gave it a go, and I’ve been addicted ever since.",
+    "The campus is designed for fun, engagement, orientation and, eventually, social interaction. Different buildings give groups of learning modules a digital home.",
+    "Choose the campus comparison, flythrough or EST Lab clip as the conversation leads. Chapel and Avatar Studio are in Other stuff."
+  ],
+  "careers-archon": [
+    "[Turn sound on for Basil’s original Archon Engine. Students created the sound effects using another teacher’s app.]",
+    "[Turn sound on for Loopy Tunes. Show the Boing preview, add it to the timeline and play it with the generated soundtrack.]",
+    "[Show the Careers Archon gameplay preview from the Markets stall.]",
+    "Two players move occupation pieces across the Perth plaza board. A challenge starts an Initiative duel. The student adjudicator compares both responses and explains their verdict. The winner chooses a territory effect, then the match returns to the board."
+  ],
+  "initiative": [
+    "The Markets walkthrough will be added when ready. For now, use the first-shift scenario to ask what students would notice, decide and do."
+  ],
+  "capabilities": [
+    "Show the Capabilities video.",
+    "Use the planned teacher view to ask what evidence a dashboard would need to show."
+  ],
+  "skillquest": [
+    "SkillQuest is a separate prototype. Skillsville is its setting. Use a Skills Lab to discuss practice, and My Portfolio to discuss how students capture evidence and explain it through STAR."
+  ],
+  "blueprint": [
+    "Open the live Career Empire Blueprint to show the project documentation.",
+    "Of course, that’s the end of the story so far. I created that this week.",
+    "It’s been a wild ride.",
+    "I started with what Basil called “a really nice Microsoft form”",
+    "Early work was still very much worksheet based teaching, that I had digitised",
+    "What I’m now working on is a total change in pedagogy, teaching through gamified learning.",
+    "Avatar Studio gives students a place to explore identity, imagination and creativity through fun and play. Show the 2D poses and expressions, then the 3D customisation. The 3D upgrade makes animation much harder."
+  ],
+  "adaptive": [
+    "And imagine if we could take that further.",
+    "A student who's struggling could receive more scaffolding, simpler language or additional practice. Another student could encounter greater complexity.",
+    "Students could choose different pathways through the learning. They could read, watch, explore, experiment or make decisions.",
+    "Case studies could come alive in a 3D environment.",
+    "And rather than every student completing exactly the same worksheet, we could create multiple ways to reach the same learning outcomes.",
+    "That's the potential I'm interested in.",
+    "Not replacing good pedagogy, but giving teachers entirely new ways to deliver it.",
+    "What could we create through CEAWA? A shared logbook, career learning resources, or an online Workplace Learning induction course are three places we could start.",
+    "Teachers across WA could bring different expertise and local perspectives. Sharing the resources could give students access to more of those learning experiences, wherever their school is.",
+    "What do you think?"
+  ]
+};

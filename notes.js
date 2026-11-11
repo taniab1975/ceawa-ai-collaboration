@@ -31,7 +31,7 @@ const presenterNotes = {
     "SkillQuest is a separate prototype. Skillsville is its setting. Use a Skills Lab to discuss practice, and My Portfolio to discuss how students capture evidence and explain it through STAR."
   ],
   "blueprint": [
-    "Open the live Career Empire Blueprint to show the project documentation.",
+    "Open Blueprint Phases at Phase 1. Compare the different ways students can learn about initiative and use the phase selector to explore the rest of the journey.",
     "Of course, that’s the end of the story so far. I created that this week.",
     "It’s been a wild ride.",
     "I started with what Basil called “a really nice Microsoft form”",

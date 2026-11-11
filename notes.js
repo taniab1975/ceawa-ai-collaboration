@@ -16,7 +16,7 @@ const presenterNotes = {
   ],
   "careers-archon": [
     "[Turn sound on for Basil’s original Archon Engine. Students created the sound effects using another teacher’s app.]",
-    "[Turn sound on for Loopy Tunes. Show the Boing preview, add it to the timeline and play it with the generated soundtrack.]",
+    "[Open Sound Effects or Music to show how each is created.]",
     "[Show the Careers Archon gameplay preview from the Markets stall.]",
     "Two players move occupation pieces across the Perth plaza board. A challenge starts an Initiative duel. The student adjudicator compares both responses and explains their verdict. The winner chooses a territory effect, then the match returns to the board."
   ],

@@ -43,7 +43,9 @@ h2{font-size:clamp(2.5rem,4.45vw,5.9rem);letter-spacing:-.066em;line-height:1.02
 .prompt{border-left:3px solid var(--mint);padding:.2rem 0 .2rem 1rem;margin:1.6rem 0 0;font-size:clamp(1.08rem,1.65vw,1.65rem);font-weight:800;line-height:1.32;max-width:37ch}
 .media-switch{min-width:0}
 .media-choices{margin-bottom:.65rem}
-.media-choices button{border-color:var(--rule);font-size:.82rem}
+.media-choices button,.media-choices a{border-color:var(--rule);font-size:.82rem}
+.media-choices a{border:1px solid var(--rule);border-radius:5px;padding:.55rem .8rem;color:var(--subtle);text-decoration:none}
+.media-choices a:hover{background:var(--panel);color:var(--paper)}
 .media-choices button[aria-pressed="true"]{background:var(--mint);border-color:var(--mint);color:#0b201d;font-weight:800}
 .media-frame{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:#061318;box-shadow:0 10px 32px #030d1140}
 .media-view{position:relative}
@@ -94,5 +96,5 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
   .cover{background-position:61% center;padding:2rem 1.35rem 4rem}
   .cover::before{background:linear-gradient(90deg,#071419f5,#07141998),linear-gradient(0deg,#07141970,transparent)}
 }
-@media(max-width:560px){.ideas{grid-template-columns:1fr;gap:.4rem}.controls button span{display:none}.media-choices button{font-size:.78rem}.paired{grid-template-columns:1fr}}
+@media(max-width:560px){.ideas{grid-template-columns:1fr;gap:.4rem}.controls button span{display:none}.media-choices button,.media-choices a{font-size:.78rem}.paired{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}

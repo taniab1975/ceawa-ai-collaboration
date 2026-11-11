@@ -46,11 +46,44 @@ document.querySelector('#notes').addEventListener('click', () => {
   dialog.scrollTop = 0;
 });
 
+const sidebar = document.querySelector('#slide-panel');
 const sidebarToggle = document.querySelector('#toggle-sidebar');
-const sidebarContent = document.querySelector('#slide-sidebar');
+const edge = document.querySelector('#slide-edge');
+let pinned = true;
+
+function setSidebarOpen(open) {
+  sidebar.inert = !open;
+  document.body.classList.toggle('sidebar-open', open);
+  edge.setAttribute('aria-expanded', String(open));
+}
+
+function hideSidebar() {
+  setSidebarOpen(false);
+  edge.focus({preventScroll:true});
+}
+
 sidebarToggle.addEventListener('click', () => {
-  const collapsed = document.body.classList.toggle('sidebar-collapsed');
-  sidebarContent.hidden = collapsed;
-  sidebarToggle.setAttribute('aria-expanded', String(!collapsed));
-  sidebarToggle.textContent = collapsed ? 'Show slide list' : 'Hide slide list';
+  pinned = !pinned;
+  document.body.classList.toggle('sidebar-collapsed', !pinned);
+  edge.hidden = pinned;
+  sidebarToggle.textContent = pinned ? 'Hide slide list' : 'Pin slide list';
+  if (pinned) setSidebarOpen(true);
+  else hideSidebar();
+});
+
+edge.addEventListener('pointerenter', event => {
+  if (event.pointerType === 'mouse') setSidebarOpen(true);
+});
+edge.addEventListener('click', () => {
+  setSidebarOpen(true);
+  sidebarToggle.focus({preventScroll:true});
+});
+sidebar.addEventListener('pointerleave', event => {
+  if (!pinned && event.pointerType === 'mouse') setSidebarOpen(false);
+});
+document.addEventListener('pointerdown', event => {
+  if (!pinned && !sidebar.contains(event.target) && event.target !== edge) setSidebarOpen(false);
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && !pinned && !sidebar.inert && !dialog.open) hideSidebar();
 });

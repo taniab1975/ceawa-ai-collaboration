@@ -83,3 +83,9 @@ body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
 .campus-crop{display:block;position:relative;overflow:hidden;border-radius:.4rem;aspect-ratio:var(--w)/var(--h);background:var(--slide)}
 .campus-crop img{position:absolute;width:calc(100% * 1926 / var(--w));max-width:none;height:auto;left:calc(-100% * var(--x) / var(--w));top:calc(-100% * var(--y) / var(--h));border-radius:0}
 @media(max-width:760px){.campus-comparison{grid-template-columns:1fr}}
+
+.avatar-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.8rem,2vw,1.5rem);margin-top:1rem}
+.avatar-comparison figure{margin:0;min-width:0}
+.avatar-comparison h4{margin:.35rem 0 .6rem;font-size:1.1rem}
+.avatar-comparison video{margin-top:0}
+@media(max-width:760px){.avatar-comparison{grid-template-columns:1fr}}

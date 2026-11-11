@@ -6,6 +6,7 @@ let active;
 
 function showSlide() {
   if (location.hash === '#loopy-tunes') history.replaceState(null, '', '#careers-archon');
+  if (location.hash === '#avatar-studio') history.replaceState(null, '', '#how-it-started');
   const selected = sections.find(section => '#' + section.id === location.hash) ?? sections[0];
   if (active === selected.id) return;
 

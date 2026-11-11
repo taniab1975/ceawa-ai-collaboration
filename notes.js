@@ -24,8 +24,8 @@ const presenterNotes = {
     "The Markets walkthrough will be added when ready. For now, use the first-shift scenario to ask what students would notice, decide and do."
   ],
   "capabilities": [
-    "Show the Capabilities video.",
-    "Use the planned teacher view to ask what evidence a dashboard would need to show."
+    "Show the one-page STAR entry. The completed reflection appears at once as an example with fictional data.",
+    "Show how the teacher can move through students, scroll the evidence entries within one cell, and move across capability columns. The demo uses fictional records."
   ],
   "skillquest": [
     "SkillQuest is a separate prototype. Skillsville is its setting. Use a Skills Lab to discuss practice, and My Portfolio to discuss how students capture evidence and explain it through STAR."

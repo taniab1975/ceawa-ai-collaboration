@@ -73,3 +73,13 @@ body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
 .blueprint-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.5rem 1.25rem}
 .blueprint-header h2{font-size:clamp(1.3rem,3vw,2rem)}
 #blueprint-frame{display:block;width:100%;height:100%;min-height:55dvh;border:0;border-radius:.5rem;background:white}
+
+.campus-comparison{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:clamp(.8rem,2vw,1.5rem);margin-top:1.5rem}
+.campus-comparison-panel{min-width:0;background:var(--bg);border:1px solid var(--rule);border-radius:.75rem;padding:clamp(.75rem,1.7vw,1.25rem)}
+.campus-comparison-panel h3{margin:0 0 .85rem;font-size:clamp(1.05rem,2vw,1.5rem)}
+.campus-comparison-panel figure{margin:0}
+.campus-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.campus-comparison-panel figcaption{font-size:.9rem}
+.campus-crop{display:block;position:relative;overflow:hidden;border-radius:.4rem;aspect-ratio:var(--w)/var(--h);background:var(--slide)}
+.campus-crop img{position:absolute;width:calc(100% * 1926 / var(--w));max-width:none;height:auto;left:calc(-100% * var(--x) / var(--w));top:calc(-100% * var(--y) / var(--h));border-radius:0}
+@media(max-width:760px){.campus-comparison{grid-template-columns:1fr}}

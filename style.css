@@ -64,9 +64,6 @@ body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
   #slide-sidebar:not([hidden]){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem}
 }
 
- .opening-heading{display:grid;grid-template-columns:minmax(0,1fr) clamp(8rem,25vw,19rem);gap:clamp(.75rem,3vw,2.5rem);align-items:start}
-.vibe-coding-image{margin:0}
-.vibe-coding-image img{aspect-ratio:4/3;object-fit:cover;object-position:top}
 
 .sidebar-collapsed:not(.sidebar-open) #slide-panel{display:none}
 

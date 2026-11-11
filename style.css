@@ -51,8 +51,8 @@ body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
 .sidebar-collapsed.sidebar-open aside{visibility:visible;transform:none;box-shadow:0 0 2rem #0009}
 #slide-edge{position:fixed;inset:0 auto 0 0;z-index:3;width:12px;padding:0;opacity:0}
 #slide-edge:focus-visible{opacity:1;width:auto;height:2.5rem;background:var(--rail);padding-inline:.6rem}
-#careers-archon h3{margin:1.5rem 0 0}
-#careers-archon h3 + video{margin-top:.55rem}
+.slide h3{margin:1.5rem 0 0}
+.slide h3 + video{margin-top:.55rem}
 @media (hover:none){
   #slide-edge{opacity:1;width:auto;height:2.25rem;background:var(--rail);padding-inline:.55rem;font-size:.8rem}
 }

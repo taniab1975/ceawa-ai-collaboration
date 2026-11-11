@@ -78,8 +78,10 @@ edge.addEventListener('click', () => {
   setSidebarOpen(true);
   sidebarToggle.focus({preventScroll:true});
 });
-sidebar.addEventListener('pointerleave', event => {
-  if (!pinned && event.pointerType === 'mouse') setSidebarOpen(false);
+document.addEventListener('pointermove', event => {
+  if (pinned || event.pointerType !== 'mouse') return;
+  const withinSidebar = !sidebar.inert && event.clientX < sidebar.getBoundingClientRect().right;
+  setSidebarOpen(event.clientX < 12 || withinSidebar);
 });
 document.addEventListener('pointerdown', event => {
   if (!pinned && !sidebar.contains(event.target) && event.target !== edge) setSidebarOpen(false);

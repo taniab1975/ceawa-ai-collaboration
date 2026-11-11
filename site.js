@@ -11,7 +11,12 @@ function showSlide() {
   active = selected.id;
   for (const section of sections) {
     section.hidden = section !== selected;
-    if (section.hidden) section.querySelector('video')?.pause();
+    for (const video of section.querySelectorAll('video')) {
+      if (section.hidden) video.pause();
+      else video.play().catch(() => {
+        // The playback controls remain available if autoplay is blocked.
+      });
+    }
   }
   for (const link of links) {
     if (link.hash === '#' + active) link.setAttribute('aria-current', 'location');
@@ -30,7 +35,7 @@ document.querySelector('.skip').addEventListener('click', event => {
 
 document.querySelector('#notes').addEventListener('click', () => {
   const slide = presenterNotes.find(note => note.id === active);
-  document.querySelector('#notes-title').textContent = slide.label + ' · ' + slide.time;
+  document.querySelector('#notes-title').textContent = slide.time ? slide.label + ' · ' + slide.time : slide.label;
   const paragraphs = slide.paragraphs.map(text => {
     const paragraph = document.createElement('p');
     paragraph.textContent = text;

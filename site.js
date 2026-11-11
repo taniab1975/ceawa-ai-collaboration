@@ -6,7 +6,8 @@ let active = sections[0].id;
 function updateActiveSlide() {
   const guide = Math.max(innerHeight * 0.32, document.querySelector('main').getBoundingClientRect().top);
   const current = sections.filter(section => section.getBoundingClientRect().top <= guide).at(-1);
-  active = current?.id ?? sections[0].id;
+  const atBottom = scrollY + innerHeight >= document.documentElement.scrollHeight - 2;
+  active = atBottom ? sections.at(-1).id : current?.id ?? sections[0].id;
   for (const link of links) {
     if (link.hash === '#' + active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');

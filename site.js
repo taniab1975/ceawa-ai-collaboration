@@ -25,6 +25,10 @@ function showSlide() {
     if (link.hash === '#' + active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
   }
+  if (active === 'blueprint') {
+    const frame = selected.querySelector('iframe');
+    if (!frame.hasAttribute('src')) frame.src = selected.querySelector('#blueprint-live-link').href;
+  }
   pane.scrollTop = 0;
 }
 

@@ -5,6 +5,7 @@ const pane = document.querySelector('main');
 let active;
 
 function showSlide() {
+  if (location.hash === '#loopy-tunes') history.replaceState(null, '', '#careers-archon');
   const selected = sections.find(section => '#' + section.id === location.hash) ?? sections[0];
   if (active === selected.id) return;
 

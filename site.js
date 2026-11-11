@@ -35,3 +35,12 @@ document.querySelector('#notes').addEventListener('click', () => {
   dialog.showModal();
   dialog.scrollTop = 0;
 });
+
+const sidebarToggle = document.querySelector('#toggle-sidebar');
+const sidebarContent = document.querySelector('#slide-sidebar');
+sidebarToggle.addEventListener('click', () => {
+  const collapsed = document.body.classList.toggle('sidebar-collapsed');
+  sidebarContent.hidden = collapsed;
+  sidebarToggle.setAttribute('aria-expanded', String(!collapsed));
+  sidebarToggle.textContent = collapsed ? 'Show slide list' : 'Hide slide list';
+});

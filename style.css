@@ -43,3 +43,12 @@ main{height:100dvh;overflow:auto;overscroll-behavior:contain}
   body{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
   main{height:auto;min-height:0}
 }
+
+#toggle-sidebar{margin:0 0 1rem;font-size:.85rem}
+body.sidebar-collapsed{grid-template-columns:8.5rem minmax(0,1fr)}
+@media(max-width:600px){
+  body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
+  aside{display:block}
+  #toggle-sidebar{margin:0 0 .35rem}
+  #slide-sidebar:not([hidden]){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem}
+}

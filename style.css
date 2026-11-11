@@ -35,3 +35,11 @@ dialog h2{font-size:1.7rem;margin:.75rem 0}
 dialog p+p{margin-top:.8rem}
 @media(max-width:820px){body{grid-template-columns:12.5rem minmax(0,1fr)}.points{grid-template-columns:1fr;gap:.8rem}}
 @media(max-width:600px){body{display:block}aside{z-index:1;height:auto;padding:.55rem .8rem;border:0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr auto;gap:.35rem}.brand{margin:0;align-self:center}aside button{grid-column:2;grid-row:1;margin:0;font-size:.85rem}nav{grid-column:1/-1;overflow:auto}nav ol{display:flex;width:max-content}nav a{white-space:nowrap}.slide{scroll-margin-top:7rem;min-height:21rem}}
+
+body{height:100dvh;overflow:hidden}
+main{height:100dvh;overflow:auto;overscroll-behavior:contain}
+.slide[hidden]{display:none}
+@media(max-width:600px){
+  body{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr)}
+  main{height:auto;min-height:0}
+}

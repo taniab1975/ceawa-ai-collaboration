@@ -1,23 +1,27 @@
 const links = [...document.querySelectorAll('nav a')];
 const sections = [...document.querySelectorAll('main section')];
 const dialog = document.querySelector('dialog');
-let active = sections[0].id;
+const pane = document.querySelector('main');
+let active;
 
-function updateActiveSlide() {
-  const guide = Math.max(innerHeight * 0.32, document.querySelector('main').getBoundingClientRect().top);
-  const current = sections.filter(section => section.getBoundingClientRect().top <= guide).at(-1);
-  const atBottom = scrollY + innerHeight >= document.documentElement.scrollHeight - 2;
-  active = atBottom ? sections.at(-1).id : current?.id ?? sections[0].id;
+function showSlide() {
+  const selected = sections.find(section => '#' + section.id === location.hash) ?? sections[0];
+  if (active === selected.id) return;
+
+  active = selected.id;
+  for (const section of sections) {
+    section.hidden = section !== selected;
+    if (section.hidden) section.querySelector('video')?.pause();
+  }
   for (const link of links) {
     if (link.hash === '#' + active) link.setAttribute('aria-current', 'location');
     else link.removeAttribute('aria-current');
   }
+  pane.scrollTop = 0;
 }
 
-addEventListener('scroll', updateActiveSlide, { passive: true });
-addEventListener('resize', updateActiveSlide);
-addEventListener('load', updateActiveSlide);
-updateActiveSlide();
+addEventListener('hashchange', showSlide);
+showSlide();
 
 document.querySelector('#notes').addEventListener('click', () => {
   const slide = presenterNotes.find(note => note.id === active);

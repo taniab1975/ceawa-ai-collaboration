@@ -37,7 +37,7 @@ const presenterNotes = {
     "I started with what Basil called “a really nice Microsoft form”",
     "Early work was still very much worksheet based teaching, that I had digitised",
     "What I’m now working on is a total change in pedagogy, teaching through gamified learning.",
-    "Avatar Studio gives students a place to explore identity, imagination and creativity through fun and play. Show the 2D poses and expressions, then the 3D customisation. The 3D upgrade makes animation much harder."
+    "Avatar Studio gives students a place to explore identity, imagination and creativity through fun and play. Show the 2D poses and expressions alongside the 3D character switches and return to campus."
   ],
   "adaptive": [
     "And imagine if we could take that further.",

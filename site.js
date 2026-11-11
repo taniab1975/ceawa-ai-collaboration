@@ -71,9 +71,6 @@ sidebarToggle.addEventListener('click', () => {
   else hideSidebar();
 });
 
-edge.addEventListener('pointerenter', event => {
-  if (event.pointerType === 'mouse') setSidebarOpen(true);
-});
 edge.addEventListener('click', () => {
   setSidebarOpen(true);
   sidebarToggle.focus({preventScroll:true});

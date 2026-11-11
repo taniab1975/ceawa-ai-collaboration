@@ -65,3 +65,5 @@ body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
 }
 
 .vibe-coding-image{width:min(100%,486px)}
+
+.sidebar-collapsed:not(.sidebar-open) #slide-panel{display:none}

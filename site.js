@@ -23,6 +23,11 @@ function showSlide() {
 addEventListener('hashchange', showSlide);
 showSlide();
 
+document.querySelector('.skip').addEventListener('click', event => {
+  event.preventDefault();
+  pane.focus();
+});
+
 document.querySelector('#notes').addEventListener('click', () => {
   const slide = presenterNotes.find(note => note.id === active);
   document.querySelector('#notes-title').textContent = slide.label + ' · ' + slide.time;

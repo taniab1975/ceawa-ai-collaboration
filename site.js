@@ -12,7 +12,10 @@ function showSlide() {
   for (const section of sections) {
     section.hidden = section !== selected;
     for (const video of section.querySelectorAll('video')) {
-      if (section.hidden) video.pause();
+      if (section.hidden) {
+        video.pause();
+        if (video.id) video.muted = true;
+      }
       else video.play().catch(() => {
         // The playback controls remain available if autoplay is blocked.
       });
@@ -86,3 +89,17 @@ document.addEventListener('pointerdown', event => {
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !pinned && !sidebar.inert && !dialog.open) hideSidebar();
 });
+
+for (const button of document.querySelectorAll('[data-sound-for]')) {
+  const video = document.getElementById(button.dataset.soundFor);
+  video.addEventListener('volumechange', () => {
+    const audible = !video.muted && video.volume > 0;
+    button.setAttribute('aria-pressed', String(audible));
+    button.textContent = audible ? 'Turn sound off' : 'Turn sound on';
+  });
+  button.addEventListener('click', () => {
+    video.muted = !video.muted && video.volume > 0;
+    if (!video.muted && video.volume === 0) video.volume = 1;
+    if (!video.muted) video.play().catch(() => {});
+  });
+}

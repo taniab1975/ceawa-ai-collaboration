@@ -63,3 +63,5 @@ body.sidebar-collapsed{grid-template-columns:minmax(0,1fr)}
   #toggle-sidebar{margin:0 0 .35rem}
   #slide-sidebar:not([hidden]){display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem}
 }
+
+.vibe-coding-image{width:min(100%,486px)}

@@ -91,6 +91,11 @@ h2{font-size:clamp(2.5rem,4.45vw,5.9rem);letter-spacing:-.066em;line-height:1.02
 .initiative-copy :last-child{margin-bottom:0}
 .initiative-copy ol,.initiative-copy ul{padding-left:1.4rem}
 .initiative-copy li+li{margin-top:.45rem}
+.initiative-notes-worksheet{margin:0 0 1rem;border:1px solid #b5c6b5;border-radius:6px;overflow:hidden;background:#f8f5eb}
+.initiative-notes-worksheet > a{display:block}
+#initiative .initiative-notes-worksheet img{max-height:none;aspect-ratio:4/3}
+.initiative-notes-worksheet figcaption{padding:.7rem .85rem;font-size:.87rem}
+.initiative-notes-worksheet figcaption a{color:#17493e;font-weight:700}
 #initiative .initiative-new img{height:auto;max-height:none}
 .initiative-blueprint{margin-top:.75rem;border:1px solid #95afa0;border-radius:8px;background:#f8f5eb;overflow:hidden}
 .initiative-blueprint summary{padding:.65rem .85rem;color:#17493e;font-weight:700;cursor:pointer}

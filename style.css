@@ -138,3 +138,18 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 .avatar-playable video{max-height:min(56dvh,680px);aspect-ratio:auto;background:#071419}
 .avatar-playable figcaption{padding:0 .45rem}
 @media(max-width:560px){.avatar-originals{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+.cover-logos{
+  display:inline-flex;
+  align-items:center;
+  gap:clamp(.7rem,1.8vw,1.5rem);
+  margin-bottom:clamp(1rem,2vw,1.6rem);
+  padding:.55rem .8rem;
+  border-radius:6px;
+  background:#fff;
+}
+.cover-logos img{display:block;width:clamp(90px,10vw,145px);height:auto}
+.cover-logos img+img{width:clamp(118px,14vw,190px)}
+.cover-presenters{display:flex;flex-wrap:wrap;gap:.65rem clamp(1rem,3vw,2.5rem);margin:0 0 1rem}
+.cover-presenters dt{font-weight:800;font-size:clamp(1rem,1.45vw,1.25rem)}
+.cover-presenters dd{margin:0;color:var(--subtle);font-size:clamp(.82rem,1.05vw,1rem)}

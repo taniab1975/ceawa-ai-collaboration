@@ -5,18 +5,32 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="CEAWA discussion prompts from Tania Byrnes on collaborating with AI in careers education.">
 <title>Collaborating with AI · CEAWA</title>
-<link rel="stylesheet" href="style.css?v=archon-live-tabs-1">
+<link rel="stylesheet" href="style.css?v=quick-references-1">
 <link rel="stylesheet" href="student-portfolio.css">
-<script defer src="notes.js?v=initiative-notes-1"></script>
-<script defer src="site.js?v=student-portfolio"></script>
+<script defer src="site.js?v=quick-references-1"></script>
 <script type="importmap">{"imports":{"three":"./greeters/three/build/three.module.js"}}</script>
 <script type="module" src="greeters/greeters.js?v=opening-avatars"></script>
 </head>
 <body>
 <header class="topbar">
 <a class="brand" href="#opening"><span class="brand-icon" aria-hidden="true"></span> CEAWA <span class="brand-divider">/</span> <span class="brand-talk">Collaborating with AI</span></a>
-<div class="tools"><button type="button" data-menu>Topics</button><button type="button" id="notes">Presenter notes</button><button type="button" id="fullscreen">Full screen</button></div>
+<div class="tools"><button type="button" data-menu>Topics</button><button type="button" id="fullscreen">Full screen</button></div>
+<nav class="quick-references" aria-label="Live quick references">
+  <button type="button" aria-pressed="false" aria-controls="quick-reference" data-embed="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/playable-3d/" data-open="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/playable-3d/">Career Empire</button>
+  <button type="button" aria-pressed="false" aria-controls="quick-reference" data-embed="https://taniab1975.github.io/skillquest/?view=embed&amp;revision=b93da151" data-open="https://taniab1975.github.io/skillquest/">SkillQuest</button>
+  <button type="button" aria-pressed="false" aria-controls="quick-reference" data-embed="https://taniab1975.github.io/career-empire-blueprint/" data-open="https://taniab1975.github.io/career-empire-blueprint/">Blueprint</button>
+  <button type="button" aria-pressed="false" aria-controls="quick-reference" data-embed="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/modules/archon-careers/hosted/" data-open="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/modules/archon-careers/hosted/">Archon Game</button>
+  <button type="button" aria-pressed="false" aria-controls="quick-reference" data-embed="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/playable-3d/?experience=sunday-markets" data-open="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/playable-3d/?experience=sunday-markets">Markets</button>
+  <button type="button" aria-pressed="false" aria-controls="quick-reference" data-embed="https://emmanuelcc-ict.github.io/Curios-Trial/playable-3d/" data-open="https://emmanuelcc-ict.github.io/Curios-Trial/playable-3d/">Curios</button>
+</nav>
+<div id="reference-actions" hidden>
+  <a id="reference-open" target="_blank" rel="noopener">Open full page ↗</a>
+  <button type="button" id="reference-close">Back to slides</button>
+</div>
 </header>
+<section id="quick-reference" aria-label="Live quick reference" hidden>
+  <iframe id="reference-frame" title="Live quick reference" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</section>
 <main id="stage" aria-label="Presentation"><section id="opening" class="slide">
 <div class="cover">
   <div class="cover-copy">
@@ -306,6 +320,5 @@
 </div></section></main>
 <footer class="controls"><button type="button" id="previous">← <span>Previous</span></button><span id="current-topic" aria-live="polite"></span><button type="button" id="next"><span>Next</span> →</button></footer>
 <dialog id="topics" aria-labelledby="topics-title"><div class="dialog-head"><h2 id="topics-title">Choose a topic</h2><form method="dialog"><button aria-label="Close topics">×</button></form></div><nav aria-label="Discussion topics"><a href="#opening">Start here</a><a href="#campus">From campus to 3D</a><a href="#careers-archon">Reuse & adapt</a><a href="#initiative">Initiative</a><a href="#skillquest">Proposed Skills Quest Endorsed Program</a><a href="#blueprint">Other stuff</a><a href="#adaptive">Collaborate through CEAWA</a></nav></dialog>
-<dialog id="presenter" aria-labelledby="notes-title"><div class="dialog-head"><h2 id="notes-title">Presenter notes</h2><form method="dialog"><button aria-label="Close notes">×</button></form></div><div id="notes-content"></div></dialog>
 </body>
 </html>

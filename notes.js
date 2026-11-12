@@ -27,6 +27,8 @@ const presenterNotes = {
   ],
   "skillquest": [
     "SkillQuest is a separate prototype. Skillsville is its setting. Use a Skills Lab to discuss practice, and My Portfolio to discuss how students capture evidence and explain it through STAR.",
+    "At Discovery Plaza, open Skills Lab directory and scroll through the eight logos. Compare the speech bubbles for Communication, the shared piece for Collaboration and the rising arrow for Initiative.",
+    "Open My Portfolio and choose Sample student. In Chronology, follow Alex’s evidence from February to September. Switch to By skill type and open the Communication reflections to compare prompted directions, checking understanding and adapting a visitor briefing.",
     "Show the one-page STAR entry. The completed reflection appears at once as an example with fictional data.",
     "Show how the teacher can move through students, scroll the evidence entries within one cell, and move across capability columns. The demo uses fictional records."
   ],

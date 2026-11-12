@@ -204,15 +204,14 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 
 .cover-logos{
   display:inline-flex;
-  align-items:center;
-  gap:clamp(.7rem,1.8vw,1.5rem);
+  align-items:stretch;
+  gap:.65rem;
   margin-bottom:clamp(1rem,2vw,1.6rem);
-  padding:.55rem .8rem;
-  border-radius:6px;
-  background:#fff;
+  max-width:100%;
 }
-.cover-logos img{display:block;width:clamp(90px,10vw,145px);height:auto}
-.cover-logos img+img{width:clamp(118px,14vw,190px)}
+.cover-logos img{display:block;height:clamp(72px,7vw,100px);object-fit:contain;border-radius:6px}
+.cover-ecc-crest{width:auto;background:#142c35}
+.cover-ceawa-logo{width:clamp(140px,16vw,225px);min-width:0;padding:.55rem;background:#fff}
 .cover-presenters{display:flex;flex-wrap:wrap;gap:.65rem clamp(1rem,3vw,2.5rem);margin:0 0 1rem}
 .cover-presenters dt{font-weight:800;font-size:clamp(1rem,1.45vw,1.25rem)}
 .cover-presenters dd{margin:0;color:var(--subtle);font-size:clamp(.82rem,1.05vw,1rem)}

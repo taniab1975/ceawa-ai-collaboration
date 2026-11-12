@@ -105,3 +105,11 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 .portfolio-demo>p{margin:0 0 .65rem;color:var(--subtle);font-size:.94rem}
 .portfolio-demo video{max-height:calc(100dvh - 2 * var(--bar) - 12rem)}
 @media(max-width:800px){.live-embed{height:65dvh;min-height:23rem}.portfolio-demo video{max-height:none}}
+
+.reuse-choices{align-items:end;column-gap:clamp(.75rem,2vw,1.6rem)}
+.reuse-group{display:grid;gap:.3rem}
+.reuse-group>span{font-size:.75rem;font-weight:750;color:var(--subtle)}
+.reuse-group>div{display:flex;flex-wrap:wrap;gap:.4rem}
+.reuse-group + .reuse-group{border-left:1px solid var(--rule);padding-left:clamp(.75rem,2vw,1.6rem)}
+@media(max-width:560px){.reuse-group + .reuse-group{border-left:0;padding-left:0}}
+@media(min-width:801px){#careers-archon .live-embed{height:clamp(23rem,calc(100dvh - 2 * var(--bar) - 10.5rem),55rem)}}

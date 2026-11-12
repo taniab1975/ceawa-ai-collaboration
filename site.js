@@ -23,7 +23,9 @@ let active = 0;
 
 function updateMedia() {
   for (const frame of document.querySelectorAll('iframe[data-src]')) {
-    if (!frame.closest('[hidden]') && !frame.hasAttribute('src')) frame.src = frame.dataset.src;
+    const hidden = frame.closest('[hidden]');
+    if (!hidden && !frame.hasAttribute('src')) frame.src = frame.dataset.src;
+    if (hidden && frame.hasAttribute('data-stop-on-hide')) frame.removeAttribute('src');
   }
   for (const video of document.querySelectorAll('video')) {
     if (video.closest('[hidden]')) {
@@ -97,7 +99,7 @@ document.addEventListener('keydown', event => {
 });
 function selectView(button) {
   const group = button.closest('.media-switch');
-  for (const choice of group.querySelectorAll(':scope > .media-choices > [data-view]')) {
+  for (const choice of group.querySelectorAll(':scope > .media-choices [data-view]')) {
     choice.setAttribute('aria-pressed', String(choice === button));
   }
   for (const view of group.querySelectorAll(':scope > .media-frame > [data-panel]')) {

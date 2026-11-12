@@ -52,7 +52,8 @@ function showSlide() {
   next.disabled = active === slides.length - 1;
   if (requested === 'capabilities' || requested === 'teacher-dashboard') {
     selectView(document.querySelector('#skillquest > .split > .media-switch > .media-choices [data-view="1"]'));
-    if (requested === 'teacher-dashboard') selectView(document.querySelector('.portfolio-demo [data-view="1"]'));
+    const portfolioView = requested === 'teacher-dashboard' ? '1' : 'student';
+    selectView(document.querySelector(`.portfolio-demo [data-view="${portfolioView}"]`));
   } else if (requested === 'avatar-studio') {
     selectView(document.querySelector('#blueprint > .split > .media-switch > .media-choices [data-view="2"]'));
   } else {
@@ -93,7 +94,7 @@ document.addEventListener('fullscreenchange', () => {
   fullscreen.textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen';
 });
 document.addEventListener('keydown', event => {
-  if (topics.open || presenter.open || event.target.closest('video, input, textarea, select') || event.altKey || event.ctrlKey || event.metaKey) return;
+  if (topics.open || presenter.open || event.target.closest('video, input, textarea, select, .student-evidence') || event.altKey || event.ctrlKey || event.metaKey) return;
   if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
     event.preventDefault();
     step(event.key === 'ArrowLeft' ? -1 : 1);

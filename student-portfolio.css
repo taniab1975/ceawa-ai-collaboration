@@ -1,0 +1,18 @@
+.student-view{padding:clamp(.7rem,2vw,1.2rem)}
+.student-view>h3{margin:0 0 .3rem;font-size:clamp(1.3rem,2.4vw,2rem);color:var(--paper)}
+.student-view>p{margin:0 0 .75rem;color:var(--subtle)}
+.student-evidence{max-height:min(46dvh,30rem);min-height:12rem;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding:.7rem}
+.student-evidence:focus-visible,.student-entry summary:focus-visible{outline:2px solid var(--mint);outline-offset:-2px}
+.student-entry{margin:0 0 .6rem;padding:.75rem .9rem;border:1px solid var(--rule);border-radius:6px;background:var(--panel)}
+.student-entry:last-child{margin-bottom:0}
+.student-entry h4{margin:.15rem 0;font-size:1.06rem;color:var(--paper)}
+.student-entry time,.student-group>p{color:var(--subtle);font-size:.9rem}
+.student-entry summary{margin-top:.4rem;color:var(--mint);cursor:pointer}
+.student-entry dl{margin:.5rem 0 0}
+.student-entry dt{margin-top:.35rem;font-weight:700}
+.student-entry dd{margin:0;color:var(--subtle)}
+.student-group{padding:.7rem 0;border-top:1px solid var(--rule)}
+.student-group:first-child{padding-top:0;border-top:0}
+.student-group>p{margin:.35rem 0}
+.student-skill{display:flex;align-items:center;gap:.5rem;margin:0;color:var(--skill-accent);font-weight:750}
+.student-skill svg{width:1.35rem;height:1.35rem;flex:none}

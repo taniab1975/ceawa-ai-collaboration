@@ -1,4 +1,4 @@
-const canvas = document.querySelector('.cover-greeters');
+const canvas = document.querySelector('#campus .campus-greeters');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 const observer = new IntersectionObserver(([entry]) => {

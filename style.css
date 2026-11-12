@@ -158,16 +158,14 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 @media(max-width:560px){.reuse-group + .reuse-group{border-left:0;padding-left:0}}
 @media(min-width:801px){#careers-archon .live-embed{height:clamp(23rem,calc(100dvh - 2 * var(--bar) - 10.5rem),55rem)}}
 
-.chapel-switch{padding:clamp(.45rem,1vw,.8rem)}
-.chapel-switch>.media-frame{box-shadow:none}
-.chapel-comparison{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start;gap:clamp(.55rem,1.4vw,1.2rem);padding:clamp(.55rem,1.4vw,1.2rem)}
+.chapel-comparison{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start;gap:clamp(.55rem,1.4vw,1.2rem);padding:clamp(.55rem,1.4vw,1.2rem)}
 .chapel-comparison figure{min-width:0;margin:0}
-.chapel-comparison figcaption{margin-bottom:.5rem;color:var(--paper);font-weight:700;font-size:clamp(.85rem,1.15vw,1.05rem)}
-.chapel-comparison img{aspect-ratio:auto;max-height:42dvh;object-fit:contain;object-position:top;border-radius:5px}
-.chapel-photos{display:grid;gap:.5rem}
-.chapel-photos img{max-height:24dvh}
-.chapel-pending{margin:0 clamp(.55rem,1.4vw,1.2rem) .75rem;color:var(--subtle);font-size:.88rem}
-@media(max-width:560px){.chapel-comparison{grid-template-columns:1fr}.chapel-photos img{max-height:none}}
+.campus-chapel figcaption{margin-bottom:.5rem;color:var(--paper);font-weight:700;font-size:clamp(.85rem,1.15vw,1.05rem)}
+.chapel-comparison img{aspect-ratio:auto;max-height:23dvh;object-fit:contain;object-position:center;border-radius:5px}
+.chapel-photos{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.chapel-walkthrough{margin:0;padding:0 clamp(.55rem,1.4vw,1.2rem) clamp(.55rem,1.4vw,1.2rem)}
+.chapel-walkthrough video{aspect-ratio:1920 / 1060;max-height:50dvh;background:#071419;border-radius:5px}
+@media(max-width:560px){.chapel-comparison{grid-template-columns:1fr}.chapel-comparison img{max-height:none}}
 
 .avatar-stages{padding:clamp(.45rem,1vw,.8rem)}
 .avatar-stages>.media-frame{box-shadow:none}
@@ -263,7 +261,6 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
   background:none;
   pointer-events:none;
 }
-.campus-chapel .chapel-switch{padding:clamp(.7rem,2vw,1.5rem)}
 @media(max-width:800px){
   .cover-stage{position:relative;right:auto;bottom:auto;width:100%;height:clamp(205px,62vw,340px)}
 }

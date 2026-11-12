@@ -11,7 +11,8 @@ const aliases = {
   'how-it-started': 'blueprint',
   'avatar-studio': 'blueprint',
   possibilities: 'adaptive',
-  'teacher-dashboard': 'capabilities',
+  capabilities: 'skillquest',
+  'teacher-dashboard': 'skillquest',
   library: 'adaptive',
   wa: 'adaptive',
   constraints: 'adaptive',
@@ -21,6 +22,9 @@ const aliases = {
 let active = 0;
 
 function updateMedia() {
+  for (const frame of document.querySelectorAll('iframe[data-src]')) {
+    if (!frame.closest('[hidden]') && !frame.hasAttribute('src')) frame.src = frame.dataset.src;
+  }
   for (const video of document.querySelectorAll('video')) {
     if (video.closest('[hidden]')) {
       video.pause();
@@ -44,7 +48,12 @@ function showSlide() {
   document.getElementById('current-topic').textContent = topicLinks[active].textContent;
   previous.disabled = active === 0;
   next.disabled = active === slides.length - 1;
-  updateMedia();
+  if (requested === 'capabilities' || requested === 'teacher-dashboard') {
+    selectView(document.querySelector('#skillquest > .split > .media-switch > .media-choices [data-view="1"]'));
+    if (requested === 'teacher-dashboard') selectView(document.querySelector('.portfolio-demo [data-view="1"]'));
+  } else {
+    updateMedia();
+  }
   window.scrollTo(0, 0);
 }
 
@@ -86,17 +95,18 @@ document.addEventListener('keydown', event => {
     step(event.key === 'ArrowLeft' ? -1 : 1);
   }
 });
+function selectView(button) {
+  const group = button.closest('.media-switch');
+  for (const choice of group.querySelectorAll(':scope > .media-choices > [data-view]')) {
+    choice.setAttribute('aria-pressed', String(choice === button));
+  }
+  for (const view of group.querySelectorAll(':scope > .media-frame > [data-panel]')) {
+    view.hidden = view.dataset.panel !== button.dataset.view;
+  }
+  updateMedia();
+}
 for (const button of document.querySelectorAll('[data-view]')) {
-  button.addEventListener('click', () => {
-    const group = button.closest('.media-switch');
-    for (const choice of group.querySelectorAll('[data-view]')) {
-      choice.setAttribute('aria-pressed', String(choice === button));
-    }
-    for (const view of group.querySelectorAll('[data-panel]')) {
-      view.hidden = view.dataset.panel !== button.dataset.view;
-    }
-    updateMedia();
-  });
+  button.addEventListener('click', () => selectView(button));
 }
 for (const button of document.querySelectorAll('[data-sound]')) {
   const video = button.previousElementSibling;

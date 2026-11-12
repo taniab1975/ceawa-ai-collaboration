@@ -98,3 +98,10 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 }
 @media(max-width:560px){.ideas{grid-template-columns:1fr;gap:.4rem}.controls button span{display:none}.media-choices button,.media-choices a{font-size:.78rem}.paired{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+.live-embed{display:block;width:100%;height:clamp(23rem,calc(100dvh - 2 * var(--bar) - 8rem),55rem);border:0;background:#f0ead9}
+.embed-open{display:flex;justify-content:flex-end;padding:.5rem .8rem;color:var(--mint);font-size:.85rem;font-weight:700}
+.portfolio-demo{padding:.75rem}
+.portfolio-demo>p{margin:0 0 .65rem;color:var(--subtle);font-size:.94rem}
+.portfolio-demo video{max-height:calc(100dvh - 2 * var(--bar) - 12rem)}
+@media(max-width:800px){.live-embed{height:65dvh;min-height:23rem}.portfolio-demo video{max-height:none}}

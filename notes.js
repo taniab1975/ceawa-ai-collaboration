@@ -17,7 +17,8 @@ const presenterNotes = {
   "careers-archon": [
     "[Play Basil’s original Archon Engine with sound. If playback waits, press Play on the video. Students created the sound effects using another teacher’s app.]",
     "[Use the Sound Effects or Music subtab and press Preview or Play inside the app.]",
-    "[Show the closed-door reveal and the current Careers Archon board preview. The full online walkthrough, including answer submission and adjudication, is planned once the online game is complete.]",
+    "[Play the Careers Archon match from the opening gates and board reveal through the Initiative collision, both fictional answers, the adjudicator’s verdict, Access Route and the next turn.]",
+    "[Play the Curios campus flyover, rover ride past the Lunar Lab, dismount and rocket launch.]",
     "Two players move occupation pieces across the Perth plaza board. A challenge starts an Initiative duel. The student adjudicator compares both responses and explains their verdict. The winner chooses a territory effect, then the match returns to the board."
   ],
   "initiative": [

@@ -177,8 +177,32 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
   .cover h1{font-size:clamp(2.7rem,10vw,5rem)}
 }
 
-.staff-avatars{padding:clamp(.65rem,2vw,1.25rem)}
-.staff-lineup{margin:0}
+.staff-avatars{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:clamp(.8rem,2vw,1.4rem);
+  align-items:center;
+  padding:clamp(.65rem,2vw,1.25rem);
+}
+.staff-photo,.staff-lineup{margin:0;min-width:0}
+.staff-photo img{
+  width:100%;
+  height:auto;
+  max-height:360px;
+  aspect-ratio:auto;
+  object-fit:contain;
+  border-radius:6px;
+}
+.staff-photo figcaption{
+  margin:.55rem auto 0;
+  color:var(--subtle);
+  text-align:center;
+  font-size:.86rem;
+}
+@media(max-width:1049px){.staff-lineup{grid-row:1}}
+@media(min-width:1050px){
+  .staff-avatars{grid-template-columns:minmax(0,.9fr) minmax(0,2.25fr)}
+}
 .staff-stage{
   position:relative;
   overflow:hidden;
@@ -188,7 +212,7 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 }
 .campus-greeters,.staff-still{position:absolute;inset:0;width:100%;height:100%}
 .campus-greeters{pointer-events:none}
-.staff-still{inset:7%;width:86%;height:86%;object-fit:contain}
+.staff-stage .staff-still{inset:7%;width:86%;height:86%;max-height:none;aspect-ratio:auto;object-fit:contain}
 .campus-greeters[data-ready] + .staff-still{visibility:hidden}
 .staff-names{
   display:grid;

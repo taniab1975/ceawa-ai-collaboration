@@ -12,7 +12,7 @@ const presenterNotes = {
     "Apparently, you just describe the software you want, and AI helps build it for you.",
     "So I gave it a go, and I’ve been addicted ever since.",
     "The campus is designed for fun, engagement, orientation and, eventually, social interaction. Different buildings give groups of learning modules a digital home.",
-    "Choose either campus comparison, the flythrough or the EST Lab clip as the conversation leads. The chapel comparison and earlier clip are under Start here. Open Staff avatars to show Basil, Tania and Andrew in 3D. The student Avatar Studio is in Other stuff."
+    "Choose either campus comparison, the flythrough or the EST Lab clip as the conversation leads. The chapel comparison and earlier clip are under Start here. Open Staff avatars to show the awards photograph of Andrew and Basil alongside the animated 3D versions of Basil, Tania and Andrew. The student Avatar Studio is in Other stuff."
   ],
   "careers-archon": [
     "[Play Basil’s original Archon Engine with sound. If playback waits, press Play on the video. Students created the sound effects using another teacher’s app.]",

@@ -124,3 +124,17 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 .chapel-photos img{max-height:24dvh}
 .chapel-pending{margin:0 clamp(.55rem,1.4vw,1.2rem) .75rem;color:var(--subtle);font-size:.88rem}
 @media(max-width:560px){.chapel-comparison{grid-template-columns:1fr}.chapel-photos img{max-height:none}}
+
+.avatar-stages{padding:clamp(.45rem,1vw,.8rem)}
+.avatar-stages>.media-frame{box-shadow:none}
+.avatar-lineup{display:grid;gap:clamp(.35rem,1vw,.75rem);padding:.45rem;align-items:end}
+.avatar-originals{grid-template-columns:repeat(5,minmax(0,1fr))}
+.avatar-uniforms{grid-template-columns:repeat(4,minmax(0,1fr))}
+.avatar-lineup figure,.avatar-playable{min-width:0;margin:0}
+.avatar-lineup img{aspect-ratio:16/9;object-fit:contain;border-radius:5px;background:#17333b}
+.avatar-uniforms img{aspect-ratio:3/4}
+.avatar-lineup figcaption,.avatar-playable figcaption{margin:.35rem 0;color:var(--subtle);font-size:clamp(.72rem,1.1vw,.95rem)}
+.avatar-lineup figcaption{text-align:center}
+.avatar-playable video{max-height:min(56dvh,680px);aspect-ratio:auto;background:#071419}
+.avatar-playable figcaption{padding:0 .45rem}
+@media(max-width:560px){.avatar-originals{grid-template-columns:repeat(3,minmax(0,1fr))}}

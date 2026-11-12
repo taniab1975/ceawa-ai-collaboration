@@ -53,6 +53,8 @@ function showSlide() {
   if (requested === 'capabilities' || requested === 'teacher-dashboard') {
     selectView(document.querySelector('#skillquest > .split > .media-switch > .media-choices [data-view="1"]'));
     if (requested === 'teacher-dashboard') selectView(document.querySelector('.portfolio-demo [data-view="1"]'));
+  } else if (requested === 'avatar-studio') {
+    selectView(document.querySelector('#blueprint > .split > .media-switch > .media-choices [data-view="2"]'));
   } else {
     updateMedia();
   }

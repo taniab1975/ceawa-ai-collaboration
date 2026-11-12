@@ -35,7 +35,7 @@ const presenterNotes = {
     "I started with what Basil called “a really nice Microsoft form”",
     "Early work was still very much worksheet based teaching, that I had digitised",
     "What I’m now working on is a total change in pedagogy, teaching through gamified learning.",
-    "Avatar Studio gives students a place to explore identity, imagination and creativity through fun and play. Show the original 2D boy and girl bases and the scrubs and chef outfits alongside the 3D character switches and return to campus.",
+    "Avatar Studio gives students a place to explore identity, imagination and creativity through fun and play. Start with Basil’s original ECC characters. Then show how I built on his work with the full-body 2D uniform characters and the wardrobe demo. Finish with the new 3D Avatar Studio, where the character you choose becomes the one you play on campus.",
     "Inside the chapel pairs the supplied Emmanuel interior and ceiling photographs with the Career Empire chapel. The earlier clip is available, and a new walkthrough is pending."
   ],
   "adaptive": [

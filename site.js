@@ -30,7 +30,7 @@ function updateMedia() {
   for (const video of document.querySelectorAll('video')) {
     if (video.closest('[hidden]')) {
       video.pause();
-      video.muted = true;
+      if (!video.hasAttribute('data-sound-on-by-default')) video.muted = true;
     } else {
       video.play().catch(() => {});
     }
@@ -114,11 +114,12 @@ for (const button of document.querySelectorAll('[data-view]')) {
 }
 for (const button of document.querySelectorAll('[data-sound]')) {
   const video = button.previousElementSibling;
-  button.setAttribute('aria-pressed', 'false');
-  button.addEventListener('click', () => { video.muted = !video.muted; });
-  video.addEventListener('volumechange', () => {
+  function updateSoundButton() {
     button.textContent = video.muted ? 'Turn sound on' : 'Mute sound';
     button.setAttribute('aria-pressed', String(!video.muted));
-  });
+  }
+  button.addEventListener('click', () => { video.muted = !video.muted; });
+  video.addEventListener('volumechange', updateSoundButton);
+  updateSoundButton();
 }
 showSlide();

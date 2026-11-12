@@ -21,7 +21,9 @@ const presenterNotes = {
     "Two players move occupation pieces across the Perth plaza board. A challenge starts an Initiative duel. The student adjudicator compares both responses and explains their verdict. The winner chooses a territory effect, then the match returns to the board."
   ],
   "initiative": [
-    "The Markets walkthrough will be added when ready. For now, use the first-shift scenario to ask what students would notice, decide and do."
+    "Compare Old Delivery and New Delivery. Students experience the situation first, then return to curriculum outcomes such as listing examples and describing their actions.",
+    "Play the Market Experience Walkthrough. Ask what students would notice on the first shift, what they would do and what happened as a result.",
+    "Use Portfolio Overview to discuss evidence and reflection. Show how Careers Archon gives students a second context to practise and explain initiative."
   ],
   "skillquest": [
     "SkillQuest is a separate prototype. Skillsville is its setting. Use a Skills Lab to discuss practice, and My Portfolio to discuss how students capture evidence and explain it through STAR.",

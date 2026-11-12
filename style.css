@@ -80,8 +80,17 @@ h2{font-size:clamp(2.5rem,4.45vw,5.9rem);letter-spacing:-.066em;line-height:1.02
 #initiative .intro{color:#38554f}
 #initiative .prompt{border-color:#42816d}
 #initiative .split{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);max-width:88rem}
-#initiative .placeholder{aspect-ratio:auto;min-height:0;padding:clamp(1.5rem,4vw,4rem);text-align:left;place-items:start;background:#e3e9d9;border-color:#b5c6b5;color:#38554f}
-#initiative .placeholder h3{color:#142a2b}
+#initiative .media-choices{display:flex;flex-wrap:wrap;gap:.4rem}
+#initiative .media-choices button{color:#17493e;border-color:#95afa0;background:#f8f5eb}
+#initiative .media-choices button:hover{background:#e3e9d9}
+#initiative .media-choices button[aria-pressed="true"]{color:#fff;background:#246453;border-color:#246453}
+#initiative .media-frame{background:#e3e9d9;border-color:#b5c6b5}
+#initiative video{background:#061318}
+.initiative-copy{padding:clamp(1rem,3vw,2rem);color:#29463f}
+.initiative-copy h3{color:#142a2b;font-size:clamp(1.35rem,2.2vw,2.15rem);margin-bottom:.65rem}
+.initiative-copy :last-child{margin-bottom:0}
+.initiative-copy ol{padding-left:1.4rem}
+.initiative-copy li+li{margin-top:.45rem}
 .closing .eyebrow{color:#246453}
 .closing .intro{color:#38554f;max-width:56ch}
 .ideas{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.8rem,2vw,2rem);margin-top:2rem}

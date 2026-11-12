@@ -24,6 +24,8 @@ const presenterNotes = {
   "initiative": [
     "Compare Old Delivery and New Delivery. Students experience the situation first, then return to curriculum outcomes such as listing examples and describing their actions.",
     "Play the Market Experience Walkthrough. Ask what students would notice on the first shift, what they would do and what happened as a result.",
+    "Show the Market opening in New Delivery. Point to the essential curriculum and the four routes: Careers Archon, Mara’s Noodle Bar, Portfolio Builder with STAR and Notes.",
+    "Open Blueprint · Phase 1 Initiative, then expand See the route map to compare the learning routes.",
     "Use Portfolio Overview to discuss evidence and reflection. Show how Careers Archon gives students a second context to practise and explain initiative."
   ],
   "skillquest": [

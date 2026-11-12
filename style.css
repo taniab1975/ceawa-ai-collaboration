@@ -79,9 +79,9 @@ h2{font-size:clamp(2.5rem,4.45vw,5.9rem);letter-spacing:-.066em;line-height:1.02
 #initiative .eyebrow{color:#246453}
 #initiative .intro{color:#38554f}
 #initiative .prompt{border-color:#42816d}
-#initiative .split{grid-template-columns:minmax(0,1fr) minmax(0,1.45fr);max-width:88rem}
-#initiative .media-choices{display:flex;flex-wrap:wrap;gap:.4rem}
-#initiative .media-choices button{color:#17493e;border-color:#95afa0;background:#f8f5eb}
+#initiative .split{grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);max-width:88rem}
+#initiative .media-choices{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.4rem}
+#initiative .media-choices button{min-height:2.75rem;padding:.4rem;white-space:normal;color:#17493e;border-color:#95afa0;background:#f8f5eb}
 #initiative .media-choices button:hover{background:#e3e9d9}
 #initiative .media-choices button[aria-pressed="true"]{color:#fff;background:#246453;border-color:#246453}
 #initiative .media-frame{background:#e3e9d9;border-color:#b5c6b5}
@@ -89,8 +89,16 @@ h2{font-size:clamp(2.5rem,4.45vw,5.9rem);letter-spacing:-.066em;line-height:1.02
 .initiative-copy{padding:clamp(1rem,3vw,2rem);color:#29463f}
 .initiative-copy h3{color:#142a2b;font-size:clamp(1.35rem,2.2vw,2.15rem);margin-bottom:.65rem}
 .initiative-copy :last-child{margin-bottom:0}
-.initiative-copy ol{padding-left:1.4rem}
+.initiative-copy ol,.initiative-copy ul{padding-left:1.4rem}
 .initiative-copy li+li{margin-top:.45rem}
+#initiative .initiative-new img{height:auto;max-height:none}
+.initiative-blueprint{margin-top:.75rem;border:1px solid #95afa0;border-radius:8px;background:#f8f5eb;overflow:hidden}
+.initiative-blueprint summary{padding:.65rem .85rem;color:#17493e;font-weight:700;cursor:pointer}
+.initiative-blueprint p,.initiative-blueprint a{display:block;margin:.25rem .85rem .65rem;color:#17493e}
+.initiative-blueprint .live-embed{min-height:30rem}
+@media(max-width:600px){
+  #initiative .media-choices{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 .closing .eyebrow{color:#246453}
 .closing .intro{color:#38554f;max-width:56ch}
 #adaptive .closing h2{max-width:31ch;font-size:clamp(1.9rem,3.6vw,4rem);text-wrap:pretty}

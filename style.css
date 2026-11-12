@@ -240,22 +240,17 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 .cover-presenters dt{font-weight:800;font-size:clamp(1rem,1.45vw,1.25rem)}
 .cover-presenters dd{margin:0;color:var(--subtle);font-size:clamp(.82rem,1.05vw,1rem)}
 
-.opening-switch { align-self: start; }
-.opening-choices {
-  margin: 0;
-  padding: .55rem clamp(.9rem, 2vw, 2.4rem);
-  border-bottom: 1px solid var(--rule);
+#opening .cover{min-height:calc(100dvh - 2 * var(--bar))}
+.cover-stage{
+  position:absolute;
+  right:2.5%;
+  bottom:2rem;
+  width:46%;
+  height:min(76%,590px);
+  background:none;
+  pointer-events:none;
 }
-.opening-switch > .media-frame {
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-.opening-switch .cover { min-height: calc(100dvh - 2 * var(--bar) - 3.5rem); }
-.opening-switch .chapel-switch,
-.opening-switch > .media-frame > [data-panel="2"] {
-  max-width: 72rem;
-  margin: 0 auto;
-  padding: clamp(.7rem, 2vw, 1.5rem);
+.campus-chapel .chapel-switch{padding:clamp(.7rem,2vw,1.5rem)}
+@media(max-width:800px){
+  .cover-stage{position:relative;right:auto;bottom:auto;width:100%;height:clamp(205px,62vw,340px)}
 }

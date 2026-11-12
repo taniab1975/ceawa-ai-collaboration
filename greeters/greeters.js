@@ -1,10 +1,11 @@
-const canvas = document.querySelector('#campus .campus-greeters');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
-const observer = new IntersectionObserver(([entry]) => {
-  if (!entry.isIntersecting) return;
-  observer.disconnect();
-  import('./scene.js?v=staff-avatars').then(({mountGreeters}) => mountGreeters(canvas, reducedMotion))
-    .catch(() => { canvas.hidden = true; });
+const observer = new IntersectionObserver(entries => {
+  for (const {target: canvas, isIntersecting} of entries) {
+    if (!isIntersecting) continue;
+    observer.unobserve(canvas);
+    import('./scene.js?v=staff-avatars').then(({mountGreeters}) => mountGreeters(canvas, reducedMotion))
+      .catch(() => { canvas.hidden = true; });
+  }
 });
-observer.observe(canvas);
+for (const canvas of document.querySelectorAll('.campus-greeters')) observer.observe(canvas);

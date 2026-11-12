@@ -113,3 +113,14 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 .reuse-group + .reuse-group{border-left:1px solid var(--rule);padding-left:clamp(.75rem,2vw,1.6rem)}
 @media(max-width:560px){.reuse-group + .reuse-group{border-left:0;padding-left:0}}
 @media(min-width:801px){#careers-archon .live-embed{height:clamp(23rem,calc(100dvh - 2 * var(--bar) - 10.5rem),55rem)}}
+
+.chapel-switch{padding:clamp(.45rem,1vw,.8rem)}
+.chapel-switch>.media-frame{box-shadow:none}
+.chapel-comparison{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start;gap:clamp(.55rem,1.4vw,1.2rem);padding:clamp(.55rem,1.4vw,1.2rem)}
+.chapel-comparison figure{min-width:0;margin:0}
+.chapel-comparison figcaption{margin-bottom:.5rem;color:var(--paper);font-weight:700;font-size:clamp(.85rem,1.15vw,1.05rem)}
+.chapel-comparison img{aspect-ratio:auto;max-height:42dvh;object-fit:contain;object-position:top;border-radius:5px}
+.chapel-photos{display:grid;gap:.5rem}
+.chapel-photos img{max-height:24dvh}
+.chapel-pending{margin:0 clamp(.55rem,1.4vw,1.2rem) .75rem;color:var(--subtle);font-size:.88rem}
+@media(max-width:560px){.chapel-comparison{grid-template-columns:1fr}.chapel-photos img{max-height:none}}

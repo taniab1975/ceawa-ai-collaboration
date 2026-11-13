@@ -80,7 +80,7 @@ h2{font-size:clamp(2.5rem,4.45vw,5.9rem);letter-spacing:-.066em;line-height:1.02
 #initiative .intro{color:#38554f}
 #initiative .prompt{border-color:#42816d}
 #initiative .split{grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);max-width:88rem}
-#initiative .media-choices{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.4rem}
+#initiative .media-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem}
 #initiative .media-choices button{min-height:2.75rem;padding:.4rem;white-space:normal;color:#17493e;border-color:#95afa0;background:#f8f5eb}
 #initiative .media-choices button:hover{background:#e3e9d9}
 #initiative .media-choices button[aria-pressed="true"]{color:#fff;background:#246453;border-color:#246453}

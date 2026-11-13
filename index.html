@@ -101,6 +101,7 @@
           <button type="button" aria-pressed="true" aria-controls="initiative-old" data-view="old">Old Delivery</button>
           <button type="button" aria-pressed="false" aria-controls="initiative-new" data-view="new">New Delivery</button>
           <button type="button" aria-pressed="false" aria-controls="initiative-portfolio" data-view="portfolio">Portfolio Overview</button>
+          <button type="button" aria-pressed="false" aria-controls="initiative-portfolio-live" data-view="portfolio-live">View Portfolio</button>
           <button type="button" aria-pressed="false" aria-controls="initiative-market" data-view="market">Market Experience Walkthrough</button>
           <button type="button" aria-pressed="false" aria-controls="initiative-archon" data-view="archon">Careers Archon</button>
           <button type="button" aria-pressed="false" aria-controls="initiative-archon-live" data-view="archon-live">Careers Archon live</button>
@@ -196,6 +197,11 @@
                 <figcaption>STAR builder · Situation</figcaption>
               </figure>
             </div>
+          </div>
+          <div class="media-view" id="initiative-portfolio-live" data-panel="portfolio-live" hidden>
+            <div class="initiative-copy"><h3>View Portfolio</h3><p>Explore fictional sample reflections across Initiative and employability capabilities. Switch between chronological and capability views to see progress over time. This demonstration is not linked to real student records.</p></div>
+            <iframe class="live-embed" title="Live demonstration portfolio: Initiative and employability capabilities" data-src="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/dashboards/student.html?portfolioDemo=1" allowfullscreen></iframe>
+            <a class="embed-open" href="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/dashboards/student.html?portfolioDemo=1" target="_blank" rel="noopener">Open full portfolio ↗</a>
           </div>
           <div class="media-view" id="initiative-market" data-panel="market" hidden>
             <video controls muted playsinline preload="none" poster="assets/markets-initiative-poster.jpg" aria-label="Market Experience Walkthrough with on-screen captions">

@@ -347,3 +347,12 @@ body{grid-template-columns:minmax(0,1fr)}
 @media(max-width:800px){.brand-talk{display:block;font-size:.75rem}.brand-divider{display:none}.topbar>.brand{gap:.65rem;width:100%}.header-actions{width:100%;margin-left:0;justify-content:space-between;gap:.3rem}.header-actions>button,.nav-disclosure>button{font-size:.8rem;padding:.6rem .55rem}.nav-disclosure:first-child .header-dropdown{left:0;right:auto}.header-logos{flex-shrink:0}.brand-talk{max-width:9rem}}
 @media(max-width:360px){.header-ecc{width:94px}.header-ceawa{width:75px}.brand-talk{font-size:.7rem;max-width:6rem}.header-actions>button,.nav-disclosure>button{font-size:.72rem;padding:.55rem .35rem}.header-actions{gap:.2rem}}
 @media(max-width:800px){.nav-disclosure{position:static}.header-dropdown,.nav-disclosure:first-child .header-dropdown{left:.9rem;right:.9rem;top:calc(100% + .25rem);width:auto;max-width:none}}
+
+/* Initiative: make the learner's first step visible before exploring the examples. */
+.initiative-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.65rem;list-style:none;padding:0;margin:1rem 0;counter-reset:initiative-step}
+.initiative-steps li{padding:.85rem;border:1px solid var(--rule);border-radius:7px;background:#173a3d;counter-increment:initiative-step}
+.initiative-steps strong{display:block;font-size:.95rem;color:var(--mint);margin-bottom:.35rem}
+.initiative-steps strong::before{content:counter(initiative-step) ". ";}
+.initiative-steps span{display:block;font-size:.88rem;line-height:1.4;color:var(--subtle)}
+.initiative-invitation{font-size:1rem;line-height:1.55;max-width:100ch;margin-bottom:0}
+@media(max-width:1199px){.initiative-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.initiative-steps li:last-child{grid-column:1/-1}}

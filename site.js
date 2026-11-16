@@ -8,7 +8,7 @@ const aliases = {
   cloning: 'careers-archon',
   'loopy-tunes': 'careers-archon',
   'how-it-started': 'blueprint',
-  'avatar-studio': 'blueprint',
+  'avatar-studio': 'campus',
   possibilities: 'adaptive',
   capabilities: 'skillquest',
   'teacher-dashboard': 'skillquest',
@@ -55,7 +55,7 @@ function showSlide() {
     const portfolioView = requested === 'teacher-dashboard' ? '1' : 'student';
     selectView(document.querySelector(`.portfolio-demo [data-view="${portfolioView}"]`));
   } else if (requested === 'avatar-studio') {
-    selectView(document.querySelector('#blueprint > .split > .media-switch > .media-choices [data-view="2"]'));
+    selectView(document.querySelector('#campus > .split > .media-switch > .media-choices [data-view="7"]'));
   } else {
     updateMedia();
   }

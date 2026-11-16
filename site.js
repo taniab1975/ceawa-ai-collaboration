@@ -20,6 +20,29 @@ const aliases = {
   basil: 'adaptive'
 };
 let active = 0;
+const disclosureButtons = [...document.querySelectorAll('.nav-disclosure > button')];
+function closeDropdowns(restoreFocus = false) {
+  for (const button of disclosureButtons) {
+    if (button.getAttribute('aria-expanded') === 'true' && restoreFocus) button.focus();
+    button.setAttribute('aria-expanded', 'false');
+    document.getElementById(button.getAttribute('aria-controls')).hidden = true;
+  }
+}
+for (const button of disclosureButtons) {
+  button.addEventListener('click', () => {
+    const open = button.getAttribute('aria-expanded') !== 'true';
+    closeDropdowns();
+    button.setAttribute('aria-expanded', String(open));
+    document.getElementById(button.getAttribute('aria-controls')).hidden = !open;
+  });
+}
+document.addEventListener('click', event => {
+  if (!event.target.closest('.nav-disclosure')) closeDropdowns();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeDropdowns(true);
+});
+
 
 function updateMedia() {
   for (const frame of document.querySelectorAll('iframe[data-src]')) {
@@ -50,6 +73,7 @@ function updateMedia() {
 }
 
 function showSlide() {
+  closeDropdowns();
   closeReference();
   const requested = location.hash.slice(1);
   const id = Object.hasOwn(aliases, requested) ? aliases[requested] : requested;
@@ -174,6 +198,7 @@ function closeReference(restoreFocus = false) {
 
 for (const button of document.querySelectorAll('.quick-references button')) {
   button.addEventListener('click', () => {
+    closeDropdowns();
     if (activeReference === button) {
       closeReference();
       updateMedia();

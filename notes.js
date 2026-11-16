@@ -23,8 +23,8 @@ const presenterNotes = {
   ],
   "initiative": [
     "Compare Old Delivery and New Delivery. Students experience the situation first, then return to curriculum outcomes such as listing examples and describing their actions.",
-    "Play the Market Experience Walkthrough or open Mara’s Noodle Bar in the live game. Walk to Mara at the stall. Ask what students notice, what they would do and what happened as a result.",
-    "Show the Market opening in New Delivery. Point to the essential curriculum and the four routes: Careers Archon, Mara’s Noodle Bar, Portfolio Builder with STAR and Notes.",
+    "Play the earlier Market walkthrough, or open the live Mara scenario and choose Head over to have a chat with Mara. After the trial, use Mara’s learning review to explain or revise the result, then finish the shift. The shift is game practice.",
+    "Show the Market opening in New Delivery. Point to the five syllabus behaviours and four choices. The lunch-rush scenario opens from Mara’s Noodle Bar. Archon, Portfolio Builder and Notes open their own activities. The public Market opens without a classroom word.",
     "Open Notes to show the tested game worksheet. Point out the adapted reading, the fictional written answer and the feedback on the multiple-choice response.",
     "Open Blueprint · Phase 1 Initiative, then expand See the route map to compare the learning routes.",
     "Use Portfolio Overview to discuss evidence and reflection. Show how Careers Archon gives students a second context to practise and explain initiative."

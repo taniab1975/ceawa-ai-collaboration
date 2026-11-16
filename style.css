@@ -326,3 +326,8 @@ body{grid-template-columns:minmax(0,1fr)}
 .header-ecc{width:160px}
 .header-ceawa{width:135px}
 @media(max-width:600px){.header-logos{gap:.6rem;padding:.35rem .4rem}.header-ecc{width:114px}.header-ceawa{width:91px}.topbar>.brand{gap:0}.topbar>.tools{gap:.2rem}}
+
+/* Keep the opening concise now that branding lives in the header. */
+#opening .cover{min-height:0;padding-top:2.5rem;padding-bottom:3.5rem}
+#opening{min-height:0}
+@media(max-width:800px){#opening .cover{padding-top:2rem;padding-bottom:3.5rem}}

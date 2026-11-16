@@ -90,10 +90,6 @@ document.querySelectorAll('.topic-bar a, .topic-cards a, #topics nav a').forEach
     showSlide();
   });
 });
-document.querySelector('[data-explore]').addEventListener('click', event => {
-  event.preventDefault();
-  document.getElementById('explore-title').scrollIntoView({behavior:'smooth'});
-});
 addEventListener('popstate', showSlide);
 addEventListener('hashchange', showSlide);
 previous.addEventListener('click', () => step(-1));

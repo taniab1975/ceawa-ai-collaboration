@@ -319,3 +319,10 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 @media(max-width:800px){.topic-cards{grid-template-columns:1fr}.topic-bar{flex-wrap:nowrap;overflow-x:auto}.topic-bar .nav-label{display:none}.topic-bar a{white-space:nowrap;flex-shrink:0}.quick-references .nav-label{width:100%}.cover{min-height:auto}.topic-overview{padding-top:2rem}}
 .topbar,.controls,.topic-bar,.topic-overview{min-width:0;max-width:100%}
 body{grid-template-columns:minmax(0,1fr)}
+
+/* Authentic shared branding, visible on every presentation screen. */
+.header-logos{display:flex;align-items:center;gap:1rem;padding:.4rem .65rem;background:#fff;border-radius:5px;flex-shrink:0}
+.header-logos img{display:block;height:auto;object-fit:contain}
+.header-ecc{width:160px}
+.header-ceawa{width:135px}
+@media(max-width:600px){.header-logos{gap:.6rem;padding:.35rem .4rem}.header-ecc{width:114px}.header-ceawa{width:91px}.topbar>.brand{gap:0}.topbar>.tools{gap:.2rem}}

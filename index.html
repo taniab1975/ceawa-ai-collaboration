@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="CEAWA discussion prompts from Tania Byrnes on collaborating with AI in careers education.">
 <title>Collaborating with AI · CEAWA</title>
-<link rel="stylesheet" href="style.css?v=dropdown-header-20261116">
+<link rel="stylesheet" href="style.css?v=initiative-menu-20261116">
 <link rel="stylesheet" href="student-portfolio.css">
-<script defer src="site.js?v=dropdown-header-20261116"></script>
+<script defer src="site.js?v=initiative-menu-20261116"></script>
 <script type="importmap">{"imports":{"three":"./greeters/three/build/three.module.js"}}</script>
 <script type="module" src="greeters/greeters.js?v=opening-avatars"></script>
 </head>
@@ -138,27 +138,30 @@
     </div></section><section id="initiative" class="slide" hidden><div class="split">
       <div class="slide-copy">
         <p class="eyebrow">Career Empire · Initiative</p>
-        <h2>See a need. Make a difference.</h2>
-        <p class="intro">Initiative means noticing what could be better, bringing an idea and taking a thoughtful first step without waiting to be told. It can build confidence, create opportunities to grow and progress, and make work more fulfilling.</p>
-        <ol class="initiative-steps" aria-label="What students need to take initiative">
-          <li><strong>Notice a need</strong><span>Something could work better.</span></li>
-          <li><strong>Believe change is possible</strong><span>It is worth improving.</span></li>
-          <li><strong>Back your contribution</strong><span>My idea could help.</span></li>
-          <li><strong>Communicate with care</strong><span>Listen, explain and involve the right people.</span></li>
-          <li><strong>Take the first step</strong><span>Act within your role, then learn from what happens.</span></li>
-        </ol>
+        <h2>How do students practise initiative?</h2>
         <p class="initiative-invitation"><strong>How do we help students move from “someone should” to “I could”?</strong> Compare teacher-led instruction with a Market experience where students choose how to learn, practise initiative and explain their impact through STAR.</p>
       </div>
       <div class="media-switch initiative-switch">
-        <div class="media-choices" role="group" aria-label="Initiative sections">
-          <button type="button" aria-pressed="true" aria-controls="initiative-old" data-view="old">Old Delivery</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-new" data-view="new">New Delivery</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-portfolio" data-view="portfolio">Portfolio Overview</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-portfolio-live" data-view="portfolio-live">View Portfolio</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-market" data-view="market">Market Experience Walkthrough</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-archon" data-view="archon">Careers Archon</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-archon-live" data-view="archon-live">Careers Archon live</button>
-          <button type="button" aria-pressed="false" aria-controls="initiative-notes" data-view="notes">Notes</button><button type="button" aria-pressed="false" aria-controls="initiative-blueprint" data-view="blueprint">Blueprint · Phase 1</button>
+        <div class="media-choices initiative-menu" role="group" aria-label="Initiative sections">
+          <div class="initiative-menu-row" id="initiative-main-menu" role="group" aria-label="Delivery and Blueprint">
+            <button type="button" aria-pressed="true" aria-controls="initiative-old" data-view="old">Old Delivery</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-new initiative-delivery-menu" data-view="new" aria-expanded="false" data-initiative-menu="initiative-delivery-menu">New Delivery</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-blueprint" data-view="blueprint">Blueprint · Phase 1</button>
+          </div>
+          <div class="initiative-menu-row" id="initiative-delivery-menu" role="group" aria-label="New Delivery options" hidden>
+            <button type="button" aria-pressed="false" aria-controls="initiative-portfolio initiative-portfolio-menu" data-view="portfolio" aria-expanded="false" data-initiative-menu="initiative-portfolio-menu">Portfolio</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-market" data-view="market">Market Experience Walkthrough</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-archon initiative-archon-menu" data-view="archon" aria-expanded="false" data-initiative-menu="initiative-archon-menu">Careers Archon</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-notes" data-view="notes">Notes</button>
+          </div>
+          <div class="initiative-menu-row" id="initiative-portfolio-menu" role="group" aria-label="Portfolio options" hidden>
+            <button type="button" aria-pressed="false" aria-controls="initiative-portfolio" data-view="portfolio">Portfolio Overview</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-portfolio-live" data-view="portfolio-live">View Portfolio</button>
+          </div>
+          <div class="initiative-menu-row" id="initiative-archon-menu" role="group" aria-label="Careers Archon options" hidden>
+            <button type="button" aria-pressed="false" aria-controls="initiative-archon" data-view="archon">Careers Archon</button>
+            <button type="button" aria-pressed="false" aria-controls="initiative-archon-live" data-view="archon-live">Careers Archon live</button>
+          </div>
         </div>
         <div class="media-frame">
 <div class="media-view initiative-copy" id="initiative-blueprint" data-panel="blueprint" hidden><h3>Blueprint · Phase 1 Initiative</h3><p>Explore the curriculum choices in Phase 1, then open <strong>See the route map</strong> to compare the ways students can learn.</p><iframe class="live-embed" title="Career Empire Blueprint · Phase 1 Initiative" data-src="https://taniab1975.github.io/career-empire-blueprint/?view=blueprint&amp;topic=year&amp;phase=J0#year" loading="lazy"></iframe><a href="https://taniab1975.github.io/career-empire-blueprint/?view=blueprint&amp;topic=year&amp;phase=J0#year" target="_blank" rel="noopener">Open full Blueprint view ↗</a></div>          <div class="media-view initiative-copy" id="initiative-old" data-panel="old">
@@ -217,12 +220,12 @@
             </div>
           </div>
           <div class="media-view initiative-new" id="initiative-new" data-panel="new" hidden>
-            <a href="assets/initiative-market-choices-live.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Initiative Market opening">
-              <img src="assets/initiative-market-choices-live.jpg" width="1280" height="720" alt="The Sunday Markets opening screen introduces initiative and offers Mara’s Noodle Bar, Career Archon, Notes and Portfolio Builder.">
+            <a href="assets/initiative-market-entry-20261116.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Initiative Market opening">
+              <img src="assets/initiative-market-entry-20261116.jpg" width="1180" height="994" alt="The redesigned Sunday Markets entry shows the lunch-rush scene, five prompts for helping Mara and the four learning choices.">
             </a>
             <div class="initiative-copy">
               <h3>New Delivery - Multiple modes of accessing the curriculum - Student Agency</h3>
-              <p>The Market opening introduces the essential curriculum. Students then choose how to access, test and experience it.</p>
+              <p>The Market opening invites students to spot a problem in Mara’s lunch rush, then choose how they want to explore initiative.</p>
               <ul>
                 <li><strong>Careers Archon</strong> gives students a scenario to respond to and discuss.</li>
                 <li><strong>Mara’s Noodle Bar</strong> lets students try out initiative during an interactive shift.</li>
@@ -236,18 +239,18 @@
             <p>Students can use a moment from the Market as evidence of initiative. A STAR reflection captures the <strong>Situation</strong>, the <strong>Task</strong>, the <strong>Action</strong> they took and the <strong>Result</strong>.</p>
             <p>Students then identify where they could apply initiative again, such as at school or on work placement.</p>
             <p>Select either screenshot to open it at full size.</p>
-            <div class="initiative-old-gallery">
+            <div class="initiative-portfolio-gallery">
+              <figure>
+                <a href="assets/initiative-portfolio-add-star.png" target="_blank" rel="noopener" aria-label="Open the full-size Add STAR reflection screen">
+                  <img src="assets/initiative-portfolio-add-star.png" width="1240" height="892" alt="The Add STAR reflection form shows Situation, Task, Actions, Results and Goal plus Review together, with expandable prompts and examples.">
+                </a>
+                <figcaption>Add STAR reflection</figcaption>
+              </figure>
               <figure>
                 <a href="assets/initiative-portfolio-log.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Initiative STAR reflection log">
                   <img src="assets/initiative-portfolio-log.jpg" width="1265" height="1290" alt="The Sunday Markets STAR reflection log shows the five Initiative behaviours and the options to open the builder or create a PDF.">
                 </a>
                 <figcaption>Initiative STAR reflection log</figcaption>
-              </figure>
-              <figure>
-                <a href="assets/initiative-portfolio-builder.jpg" target="_blank" rel="noopener" aria-label="Open the full-size Initiative STAR builder">
-                  <img src="assets/initiative-portfolio-builder.jpg" width="1265" height="1290" alt="The Situation step of the Initiative STAR builder shows the reflection prompt, skill tags and an empty response field.">
-                </a>
-                <figcaption>STAR builder · Situation</figcaption>
               </figure>
             </div>
           </div>
@@ -260,7 +263,7 @@
             <video controls muted playsinline preload="none" poster="assets/markets-initiative-poster.jpg" aria-label="Market Experience Walkthrough with on-screen captions">
               <source src="assets/markets-initiative-walkthrough.mp4" type="video/mp4">
             </video>
-            <div class="initiative-copy"><p>Follow the first shift in the Market and see where students make choices, reflect and apply initiative to another situation.</p></div>
+            <div class="initiative-copy"><p>Follow Mara’s first shift in the video, then open the game to walk to her noodle stall and talk to her.</p><a class="initiative-market-link" href="https://emmanuel-ict-support.github.io/GTCEM-Career-Empire/playable-3d/?experience=sunday-markets&amp;marketRoute=mara" target="_blank" rel="noopener">Open Mara’s Noodle Bar in the game ↗</a></div>
           </div>
           <div class="media-view" id="initiative-archon" data-panel="archon" hidden>
             <video controls muted playsinline preload="none" poster="assets/careers-archon-duel-walkthrough.jpg" aria-label="Careers Archon one-duel walkthrough">

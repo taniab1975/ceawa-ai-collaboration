@@ -151,6 +151,26 @@ function selectView(button) {
   for (const view of group.querySelectorAll(':scope > .media-frame > [data-panel]')) {
     view.hidden = view.dataset.panel !== button.dataset.view;
   }
+  if (group.classList.contains('initiative-switch')) {
+    const view = button.dataset.view;
+    const portfolio = view === 'portfolio' || view === 'portfolio-live';
+    const archon = view === 'archon' || view === 'archon-live';
+    const delivery = view !== 'old' && view !== 'blueprint';
+    const expandedMenus = {
+      'initiative-delivery-menu': delivery,
+      'initiative-portfolio-menu': portfolio,
+      'initiative-archon-menu': archon
+    };
+    for (const parent of group.querySelectorAll('[data-initiative-menu]')) {
+      const expanded = expandedMenus[parent.dataset.initiativeMenu];
+      parent.setAttribute('aria-expanded', String(expanded));
+      parent.setAttribute('aria-pressed', String(expanded));
+      group.querySelector('#' + parent.dataset.initiativeMenu).hidden = !expanded;
+    }
+    for (const child of group.querySelectorAll('.initiative-menu-row [data-view]:not([data-initiative-menu])')) {
+      child.setAttribute('aria-pressed', String(child.dataset.view === view));
+    }
+  }
   updateMedia();
 }
 for (const button of document.querySelectorAll('[data-view]')) {

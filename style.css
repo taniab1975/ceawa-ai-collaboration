@@ -312,8 +312,6 @@ dialog::backdrop{background:#020c11c9;backdrop-filter:blur(5px)}
 .topic-cards h3{font-size:1.35rem;margin:.65rem 0}
 .topic-cards p{color:var(--subtle);line-height:1.5}
 .topic-cards a>span:last-child{color:var(--mint);font-weight:700}
-#initiative .initiative-switch>.media-choices{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:.4rem;padding:.3rem .1rem .7rem;scrollbar-width:thin}
-#initiative .initiative-switch>.media-choices button{flex:1 0 auto;min-height:2.75rem;white-space:nowrap;padding:.65rem .6rem}
 #initiative-blueprint iframe{width:100%;height:65vh;min-height:400px;border:0;background:white}
 @media(min-width:1200px){#initiative .split{grid-template-columns:1fr;max-width:none}#initiative .slide-copy{max-width:80rem}#initiative .slide-copy h2{font-size:2.5rem}#initiative .slide-copy .intro{max-width:90ch}#initiative .slide-copy .prompt{display:none}}
 @media(max-width:800px){.topic-cards{grid-template-columns:1fr}.topic-bar{flex-wrap:nowrap;overflow-x:auto}.topic-bar .nav-label{display:none}.topic-bar a{white-space:nowrap;flex-shrink:0}.quick-references .nav-label{width:100%}.cover{min-height:auto}.topic-overview{padding-top:2rem}}
@@ -349,10 +347,19 @@ body{grid-template-columns:minmax(0,1fr)}
 @media(max-width:800px){.nav-disclosure{position:static}.header-dropdown,.nav-disclosure:first-child .header-dropdown{left:.9rem;right:.9rem;top:calc(100% + .25rem);width:auto;max-width:none}}
 
 /* Initiative: make the learner's first step visible before exploring the examples. */
-.initiative-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.65rem;list-style:none;padding:0;margin:1rem 0;counter-reset:initiative-step}
-.initiative-steps li{padding:.85rem;border:1px solid var(--rule);border-radius:7px;background:#173a3d;counter-increment:initiative-step}
-.initiative-steps strong{display:block;font-size:.95rem;color:var(--mint);margin-bottom:.35rem}
-.initiative-steps strong::before{content:counter(initiative-step) ". ";}
-.initiative-steps span{display:block;font-size:.88rem;line-height:1.4;color:var(--subtle)}
 .initiative-invitation{font-size:1rem;line-height:1.55;max-width:100ch;margin-bottom:0}
-@media(max-width:1199px){.initiative-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.initiative-steps li:last-child{grid-column:1/-1}}
+
+#initiative .initiative-switch > .initiative-menu { display: grid; grid-template-columns: minmax(0, 1fr); gap: .45rem; }
+.initiative-menu-row { display: flex; flex-wrap: wrap; gap: .4rem; }
+.initiative-menu-row[hidden] { display: none; }
+#initiative .initiative-menu-row button { flex: 1 1 9rem; padding: .55rem .75rem; }
+#initiative #initiative-main-menu button { flex-basis: 0; min-width: 0; }
+.initiative-market-link { display: inline-block; font-weight: 700; color: #17493e; }
+
+.initiative-portfolio-gallery { display: grid; gap: 1rem; }
+.initiative-portfolio-gallery figure { width: 100%; margin: 0 auto; border: 1px solid #b5c6b5; border-radius: 8px; overflow: hidden; background: #f8f5eb; }
+.initiative-portfolio-gallery figure:first-child { max-width: 77.5rem; }
+.initiative-portfolio-gallery figure + figure { max-width: 55rem; }
+.initiative-portfolio-gallery a { display: block; }
+#initiative .initiative-portfolio-gallery img { display: block; width: 100%; height: auto; max-height: none; }
+.initiative-portfolio-gallery figcaption { padding: .65rem .85rem; font-weight: 700; }

@@ -10,12 +10,13 @@ const aliases = {
   'how-it-started': 'blueprint',
   'avatar-studio': 'campus',
   possibilities: 'adaptive',
-  capabilities: 'skillquest',
-  'teacher-dashboard': 'skillquest',
+  capabilities: 'initiative',
+  'teacher-dashboard': 'initiative',
   library: 'adaptive',
   wa: 'adaptive',
   constraints: 'adaptive',
   pilot: 'adaptive',
+  skillquest: 'opening',
   basil: 'adaptive'
 };
 let active = 0;
@@ -29,9 +30,21 @@ function updateMedia() {
   for (const video of document.querySelectorAll('video')) {
     if (video.closest('[hidden]')) {
       video.pause();
+      video.dataset.wasVisible = 'false';
       if (!video.hasAttribute('data-sound-on-by-default')) video.muted = true;
     } else {
-      video.play().catch(() => {});
+      const soundDefault = video.hasAttribute('data-sound-on-by-default');
+      if (soundDefault && video.dataset.wasVisible !== 'true') {
+        video.muted = false;
+        video.volume = 1;
+      }
+      video.dataset.wasVisible = 'true';
+      video.play().catch(() => {
+        if (soundDefault) {
+          const button = video.nextElementSibling;
+          if (button?.matches('[data-sound]')) button.textContent = 'Play with sound';
+        }
+      });
     }
   }
 }
@@ -50,10 +63,12 @@ function showSlide() {
   document.getElementById('current-topic').textContent = topicLinks[active].textContent;
   previous.disabled = active === 0;
   next.disabled = active === slides.length - 1;
+  document.querySelectorAll('.topic-bar a, .topic-cards a').forEach(link => {
+    if (link.hash === '#' + slides[active].id) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
   if (requested === 'capabilities' || requested === 'teacher-dashboard') {
-    selectView(document.querySelector('#skillquest > .split > .media-switch > .media-choices [data-view="1"]'));
-    const portfolioView = requested === 'teacher-dashboard' ? '1' : 'student';
-    selectView(document.querySelector(`.portfolio-demo [data-view="${portfolioView}"]`));
+    selectView(document.querySelector('#initiative [data-view="portfolio-live"]'));
   } else if (requested === 'avatar-studio') {
     selectView(document.querySelector('#campus > .split > .media-switch > .media-choices [data-view="7"]'));
   } else {
@@ -67,6 +82,19 @@ function step(amount) {
   if (slide) location.hash = slide.id;
 }
 
+document.querySelectorAll('.topic-bar a, .topic-cards a, #topics nav a').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    history.pushState(null, '', link.hash);
+    topics.close();
+    showSlide();
+  });
+});
+document.querySelector('[data-explore]').addEventListener('click', event => {
+  event.preventDefault();
+  document.getElementById('explore-title').scrollIntoView({behavior:'smooth'});
+});
+addEventListener('popstate', showSlide);
 addEventListener('hashchange', showSlide);
 previous.addEventListener('click', () => step(-1));
 next.addEventListener('click', () => step(1));
@@ -114,7 +142,11 @@ for (const button of document.querySelectorAll('[data-sound]')) {
     button.textContent = video.muted ? 'Turn sound on' : 'Mute sound';
     button.setAttribute('aria-pressed', String(!video.muted));
   }
-  button.addEventListener('click', () => { video.muted = !video.muted; });
+  button.addEventListener('click', () => {
+    if (video.paused) { video.muted = false; video.play().catch(() => {}); }
+    else video.muted = !video.muted;
+    updateSoundButton();
+  });
   video.addEventListener('volumechange', updateSoundButton);
   updateSoundButton();
 }
